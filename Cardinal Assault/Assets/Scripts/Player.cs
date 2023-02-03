@@ -13,11 +13,18 @@ public class Player : MonoBehaviour
     public PlayerDirection curDirection = PlayerDirection.North;
     private Rigidbody2D player;
 
+    public PlayerDirection lastDirection = PlayerDirection.North;
+    public bool hold = false;
+    public bool change = false;
+
     void Start() {  player = this.gameObject.GetComponent<Rigidbody2D>(); }
     #endregion initialization
 
     void Update()
     {
+        hold = false;
+        change = false;
+
         switch (curDirection)
         {
             case PlayerDirection.North: player.rotation = 0; break;
@@ -25,6 +32,17 @@ public class Player : MonoBehaviour
             case PlayerDirection.South: player.rotation = 180; break;
             case PlayerDirection.West: player.rotation = 90; break;
         }
+
+        if (hold)
+        {
+
+        }
+        else if (curDirection != lastDirection)
+        {
+            change = true;
+        }
+
+        lastDirection = curDirection;
     }
     #region rotation input
     public void RotateLeft(InputAction.CallbackContext context)
