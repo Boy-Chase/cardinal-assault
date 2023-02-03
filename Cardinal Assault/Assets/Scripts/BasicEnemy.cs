@@ -25,70 +25,72 @@ public class BasicEnemy : MonoBehaviour
     {
         if (player.GetComponent<Player>().change)
         {
-            if (lane == 0 && tilePosition == 0)
-            {
+            tilePosition++;
+        }
 
-            }
-            else if (lane == 0 && tilePosition == 1)
-            {
-
-            }
-            else if (lane == 0 && tilePosition == 2)
-            {
-
-            }
-            else if (lane == 0 && tilePosition == 3)
-            {
-
-            }
-            else if (lane == 1 && tilePosition == 0)
-            {
-
-            }
-            else if (lane == 1 && tilePosition == 1)
-            {
-
-            }
-            else if (lane == 1 && tilePosition == 2)
-            {
-
-            }
-            else if (lane == 1 && tilePosition == 3)
-            {
-
-            }
-            else if (lane == 2 && tilePosition == 0)
-            {
-
-            }
-            else if (lane == 2 && tilePosition == 1)
-            {
-
-            }
-            else if (lane == 2 && tilePosition == 2)
-            {
-
-            }
-            else if (lane == 2 && tilePosition == 3)
-            {
-
-            }
-            else if (lane == 3 && tilePosition == 0)
-            {
-
-            }
-            else if (lane == 3 && tilePosition == 1)
-            {
-
-            }
-            else if (lane == 3 && tilePosition == 2)
-            {
-
-            }
-            else if (lane == 3 && tilePosition == 3)
-            {
-
-            }
+        if (lane == 0 && tilePosition == 0)
+        {
+            gameObject.transform.position = new Vector2(-9, 0);
+        }
+        else if (lane == 0 && tilePosition == 1)
+        {
+            gameObject.transform.position = new Vector2(-6, 0);
+        }
+        else if (lane == 0 && tilePosition == 2)
+        {
+            gameObject.transform.position = new Vector2(-3, 0);
+        }
+        else if (lane == 0 && tilePosition == 3)
+        {
+            gameObject.transform.position = new Vector2(-2, 0);
+        }
+        else if (lane == 1 && tilePosition == 0)
+        {
+            gameObject.transform.position = new Vector2(0, 4);
+        }
+        else if (lane == 1 && tilePosition == 1)
+        {
+            gameObject.transform.position = new Vector2(0, 3);
+        }
+        else if (lane == 1 && tilePosition == 2)
+        {
+            gameObject.transform.position = new Vector2(0, 2);
+        }
+        else if (lane == 1 && tilePosition == 3)
+        {
+            gameObject.transform.position = new Vector2(0, 1);
+        }
+        else if (lane == 2 && tilePosition == 0)
+        {
+            gameObject.transform.position = new Vector2(9, 0);
+        }
+        else if (lane == 2 && tilePosition == 1)
+        {
+            gameObject.transform.position = new Vector2(6, 0);
+        }
+        else if (lane == 2 && tilePosition == 2)
+        {
+            gameObject.transform.position = new Vector2(3, 0);
+        }
+        else if (lane == 2 && tilePosition == 3)
+        {
+            gameObject.transform.position = new Vector2(2, 0);
+        }
+        else if (lane == 3 && tilePosition == 0)
+        {
+            gameObject.transform.position = new Vector2(0, -4);
+        }
+        else if (lane == 3 && tilePosition == 1)
+        {
+            gameObject.transform.position = new Vector2(0, -3);
+        }
+        else if (lane == 3 && tilePosition == 2)
+        {
+            gameObject.transform.position = new Vector2(0, -2);
+        }
+        else if (lane == 3 && tilePosition == 3)
+        {
+            gameObject.transform.position = new Vector2(0, -1);
         }
     }
 }
