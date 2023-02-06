@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
 
         if (hold)
         {
-
+            // if player holds position
         }
         else if (curDirection != lastDirection)
         {

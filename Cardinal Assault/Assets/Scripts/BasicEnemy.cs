@@ -10,6 +10,8 @@ public class BasicEnemy : MonoBehaviour
     // right = 2
     // down = 3
     public int lane;
+
+    // increment the closer to the player the enemy is (spawning in at tilePosition 0)
     public int tilePosition;
 
     public GameObject player;
@@ -17,6 +19,7 @@ public class BasicEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // get reference to our player
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -28,25 +31,26 @@ public class BasicEnemy : MonoBehaviour
             tilePosition++;
         }
 
+        // set position
         if (lane == 0 && tilePosition == 0)
         {
-            gameObject.transform.position = new Vector2(-9, 0);
+            gameObject.transform.position = new Vector2(-4.6f, 0);
         }
         else if (lane == 0 && tilePosition == 1)
         {
-            gameObject.transform.position = new Vector2(-6, 0);
+            gameObject.transform.position = new Vector2(-3, 0);
         }
         else if (lane == 0 && tilePosition == 2)
         {
-            gameObject.transform.position = new Vector2(-3, 0);
+            gameObject.transform.position = new Vector2(-1.6f, 0);
         }
         else if (lane == 0 && tilePosition == 3)
         {
-            gameObject.transform.position = new Vector2(-2, 0);
+            gameObject.transform.position = new Vector2(-1.3f, 0);
         }
         else if (lane == 1 && tilePosition == 0)
         {
-            gameObject.transform.position = new Vector2(0, 4);
+            gameObject.transform.position = new Vector2(0, 4.3f);
         }
         else if (lane == 1 && tilePosition == 1)
         {
@@ -54,31 +58,31 @@ public class BasicEnemy : MonoBehaviour
         }
         else if (lane == 1 && tilePosition == 2)
         {
-            gameObject.transform.position = new Vector2(0, 2);
+            gameObject.transform.position = new Vector2(0, 1.7f);
         }
         else if (lane == 1 && tilePosition == 3)
         {
-            gameObject.transform.position = new Vector2(0, 1);
+            gameObject.transform.position = new Vector2(0, 1.4f);
         }
         else if (lane == 2 && tilePosition == 0)
         {
-            gameObject.transform.position = new Vector2(9, 0);
+            gameObject.transform.position = new Vector2(4.6f, 0);
         }
         else if (lane == 2 && tilePosition == 1)
         {
-            gameObject.transform.position = new Vector2(6, 0);
+            gameObject.transform.position = new Vector2(3, 0);
         }
         else if (lane == 2 && tilePosition == 2)
         {
-            gameObject.transform.position = new Vector2(3, 0);
+            gameObject.transform.position = new Vector2(1.6f, 0);
         }
         else if (lane == 2 && tilePosition == 3)
         {
-            gameObject.transform.position = new Vector2(2, 0);
+            gameObject.transform.position = new Vector2(1.3f, 0);
         }
         else if (lane == 3 && tilePosition == 0)
         {
-            gameObject.transform.position = new Vector2(0, -4);
+            gameObject.transform.position = new Vector2(0, -4.3f);
         }
         else if (lane == 3 && tilePosition == 1)
         {
@@ -86,11 +90,25 @@ public class BasicEnemy : MonoBehaviour
         }
         else if (lane == 3 && tilePosition == 2)
         {
-            gameObject.transform.position = new Vector2(0, -2);
+            gameObject.transform.position = new Vector2(0, -1.7f);
         }
         else if (lane == 3 && tilePosition == 3)
         {
-            gameObject.transform.position = new Vector2(0, -1);
+            gameObject.transform.position = new Vector2(0, -1.4f);
+        }
+
+        // if enemy has reached the player
+        if (tilePosition == 3)
+        {
+            // if player is blocking correctly
+            if ( (lane == 0 && player.GetComponent<Player>().curDirection == PlayerDirection.West) || (lane == 1 && player.GetComponent<Player>().curDirection == PlayerDirection.North) || (lane == 2 && player.GetComponent<Player>().curDirection == PlayerDirection.East) || (lane == 3 && player.GetComponent<Player>().curDirection == PlayerDirection.South))
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                // subtract health here
+            }
         }
     }
 }
