@@ -792,6 +792,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: ac119de4-a3aa-490a-a8cd-a9502e81658a
     m_ActionName: Player/RotateRight[/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2028620257}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: Wait
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 738d57d7-c76e-412a-a3b2-bbe1c9a5537d
+    m_ActionName: Player/Hold[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

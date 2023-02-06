@@ -60,5 +60,12 @@ public class Player : MonoBehaviour
         curDirection++;
         if ((int)curDirection > 3) curDirection = PlayerDirection.North;
     }
+
+    public void Wait(InputAction.CallbackContext context)
+    {
+        if (!context.action.triggered) return;
+
+        Debug.Log("h");
+    }
     #endregion rotation input
 }
