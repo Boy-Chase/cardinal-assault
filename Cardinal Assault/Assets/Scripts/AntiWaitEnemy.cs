@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class BasicEnemy : MonoBehaviour
+public class AntiWaitEnemy : MonoBehaviour
 {
     // left = 0
     // up = 1
@@ -26,7 +25,7 @@ public class BasicEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player.GetComponent<Player>().change || player.GetComponent<Player>().waiting)
+        if (player.GetComponent<Player>().change)
         {
             tilePosition++;
         }
@@ -101,7 +100,7 @@ public class BasicEnemy : MonoBehaviour
         if (tilePosition == 3)
         {
             // if player is blocking correctly
-            if ( (lane == 0 && player.GetComponent<Player>().curDirection == PlayerDirection.West) || (lane == 1 && player.GetComponent<Player>().curDirection == PlayerDirection.North) || (lane == 2 && player.GetComponent<Player>().curDirection == PlayerDirection.East) || (lane == 3 && player.GetComponent<Player>().curDirection == PlayerDirection.South))
+            if ((lane == 0 && player.GetComponent<Player>().curDirection == PlayerDirection.West) || (lane == 1 && player.GetComponent<Player>().curDirection == PlayerDirection.North) || (lane == 2 && player.GetComponent<Player>().curDirection == PlayerDirection.East) || (lane == 3 && player.GetComponent<Player>().curDirection == PlayerDirection.South))
             {
                 Destroy(gameObject);
             }

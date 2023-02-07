@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D player;
 
     public PlayerDirection lastDirection = PlayerDirection.North;
-    public bool hold = false;
+    public bool waiting = false;
     public bool change = false;
 
     void Start() {  player = this.gameObject.GetComponent<Rigidbody2D>(); }
@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        hold = false;
+        waiting = false;
         change = false;
 
         switch (curDirection)
@@ -33,11 +33,7 @@ public class Player : MonoBehaviour
             case PlayerDirection.West: player.rotation = 90; break;
         }
 
-        if (hold)
-        {
-            // if player holds position
-        }
-        else if (curDirection != lastDirection)
+        if (curDirection != lastDirection)
         {
             change = true;
         }
@@ -65,7 +61,7 @@ public class Player : MonoBehaviour
     {
         if (!context.action.triggered) return;
 
-        Debug.Log("h");
+        waiting = true;
     }
     #endregion rotation input
 }
