@@ -1,0 +1,9 @@
+{
+  "Rows": {
+    "North":["Basic", "", ""],
+    "East":["", "Basic", ""],
+    "South":["", "", "Basic"],
+    "West":["", "", "" ]
+  },
+  "Length": 3
+}

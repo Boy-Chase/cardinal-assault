@@ -9,6 +9,15 @@ public enum PlayerDirection { North, East, South, West }
 
 public class Player : MonoBehaviour
 {
+    #region singleton
+    public static Player Instance { get; private set; }
+    private void Awake()
+    {
+        if (Instance != null && Instance != this) Destroy(this);
+        else Instance = this;
+    }
+    #endregion singleton
+
     #region initialization
     public PlayerDirection curDirection = PlayerDirection.North;
     private Rigidbody2D player;
@@ -16,6 +25,8 @@ public class Player : MonoBehaviour
     public PlayerDirection lastDirection = PlayerDirection.North;
     public bool waiting = false;
     public bool change = false;
+
+    public int health = 3;
 
     void Start() {  player = this.gameObject.GetComponent<Rigidbody2D>(); }
     #endregion initialization
@@ -40,6 +51,7 @@ public class Player : MonoBehaviour
 
         lastDirection = curDirection;
     }
+
     #region rotation input
     public void RotateLeft(InputAction.CallbackContext context)
     {
@@ -47,6 +59,7 @@ public class Player : MonoBehaviour
 
         curDirection--;
         if ((int)curDirection < 0) curDirection = PlayerDirection.West;
+        LevelManager.Instance.Step();
     }
 
     public void RotateRight(InputAction.CallbackContext context)
@@ -55,6 +68,7 @@ public class Player : MonoBehaviour
 
         curDirection++;
         if ((int)curDirection > 3) curDirection = PlayerDirection.North;
+        LevelManager.Instance.Step();
     }
 
     public void Wait(InputAction.CallbackContext context)
