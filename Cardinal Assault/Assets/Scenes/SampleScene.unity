@@ -2220,6 +2220,9 @@ MonoBehaviour:
   lastDirection: 0
   waiting: 0
   change: 0
+  movesMade: 0
+  moveTimer: 0
+  scoreTime: 0
   health: 3
 --- !u!50 &2028620258
 Rigidbody2D:

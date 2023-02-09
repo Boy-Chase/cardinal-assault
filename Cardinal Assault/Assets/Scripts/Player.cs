@@ -24,6 +24,11 @@ public class Player : MonoBehaviour
     public PlayerDirection lastDirection = PlayerDirection.North;
     public bool waiting = false;
     public bool change = false;
+    public int movesMade;
+
+    // time used for each movement + overall time saved with moves
+    public float moveTimer = 5.0f;
+    public float scoreTime = 0.0f;
 
     public int health = 3;
 
@@ -32,6 +37,8 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        moveTimer -= Time.deltaTime;
+
         waiting = false;
         change = false;
 
@@ -54,6 +61,16 @@ public class Player : MonoBehaviour
     #region rotation input
     public void RotateLeft(InputAction.CallbackContext context)
     {
+        // add saved time to time score
+        if (0.0f < moveTimer)
+        {
+            scoreTime += moveTimer;
+        }
+
+        // increment moves made + return and reset move timer
+        movesMade++;
+        moveTimer = 5.0f;
+
         if (!context.action.triggered) return;
 
         curDirection--;
@@ -63,6 +80,16 @@ public class Player : MonoBehaviour
 
     public void RotateRight(InputAction.CallbackContext context)
     {
+        // add saved time to time score
+        if (0.0f < moveTimer)
+        {
+            scoreTime += moveTimer;
+        }
+
+        // increment moves made + return and reset move timer
+        movesMade++;
+        moveTimer = 5.0f;
+
         if (!context.action.triggered) return;
 
         curDirection++;
