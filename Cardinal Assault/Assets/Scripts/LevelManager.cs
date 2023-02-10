@@ -3,9 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using UnityEditorInternal.VersionControl;
 using UnityEngine;
-using UnityEngine.Experimental.Rendering;
 
 public class LevelManager : MonoBehaviour
 {
