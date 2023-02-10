@@ -27,7 +27,7 @@ public class AntiWaitEnemy : MonoBehaviour
     {
         if (player.GetComponent<Player>().change)
         {
-            tilePosition++;
+            // tilePosition++;
         }
 
         // set position

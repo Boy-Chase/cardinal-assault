@@ -28,7 +28,7 @@ public class BasicEnemy : MonoBehaviour
     {
         if (player.GetComponent<Player>().change || player.GetComponent<Player>().waiting)
         {
-            tilePosition++;
+            // tilePosition++;
         }
 
         // set position

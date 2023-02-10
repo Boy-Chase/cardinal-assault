@@ -36,6 +36,8 @@ public class LevelManager : MonoBehaviour
     public List<Enemy[]> enemies;
     public Enemy[] enemyTypes;
 
+    public float beatTimer = 0.0f;
+
     void Start()
     {
         data = JsonUtility.FromJson<LevelData>(level.text);
@@ -46,6 +48,16 @@ public class LevelManager : MonoBehaviour
 
         EnemyManager.Instance.SetEnemies();
         EnemyManager.Instance.SetSprites();
+    }
+
+    private void Update()
+    {
+        beatTimer += Time.deltaTime;
+        if (1.0f <= beatTimer)
+        {
+            Step();
+            beatTimer = 0.0f;
+        }
     }
 
     public void ConvertToObjects()
