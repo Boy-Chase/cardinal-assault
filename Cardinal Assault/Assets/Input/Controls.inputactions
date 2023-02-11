@@ -31,6 +31,24 @@
                     "processors": "",
                     "interactions": "Press",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "RotateUp",
+                    "type": "Button",
+                    "id": "7f5c6379-a12c-49a7-bb56-8cc68e5f1e76",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RotateDown",
+                    "type": "Button",
+                    "id": "6f76e61f-d3e5-42a5-b678-9b44784335d8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -64,6 +82,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Wait",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "edaab4d8-36b4-4717-b161-8d7bd03d94a9",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotateUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c5f2a5c6-8d55-4369-9152-207d05c64ae5",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotateDown",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

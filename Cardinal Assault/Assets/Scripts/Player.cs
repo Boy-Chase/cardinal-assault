@@ -97,6 +97,44 @@ public class Player : MonoBehaviour
         LevelManager.Instance.Step();
     }
 
+    public void RotateUp(InputAction.CallbackContext context)
+    {
+        // add saved time to time score
+        if (0.0f < moveTimer)
+        {
+            scoreTime += moveTimer;
+        }
+
+        // increment moves made + return and reset move timer
+        movesMade++;
+        moveTimer = 5.0f;
+
+        if (!context.action.triggered) return;
+
+        curDirection--;
+        if ((int)curDirection < 0) curDirection = PlayerDirection.North;
+        LevelManager.Instance.Step();
+    }
+
+    public void RotateDown(InputAction.CallbackContext context)
+    {
+        // add saved time to time score
+        if (0.0f < moveTimer)
+        {
+            scoreTime += moveTimer;
+        }
+
+        // increment moves made + return and reset move timer
+        movesMade++;
+        moveTimer = 5.0f;
+
+        if (!context.action.triggered) return;
+
+        curDirection--;
+        if ((int)curDirection < 0) curDirection = PlayerDirection.South;
+        LevelManager.Instance.Step();
+    }
+
     public void Wait(InputAction.CallbackContext context)
     {
         if (!context.action.triggered) return;
