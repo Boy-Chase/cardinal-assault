@@ -798,6 +798,7 @@ MonoBehaviour:
   level: {fileID: 4900000, guid: aca28f18d76bb3446a10c25fe743f884, type: 3}
   enemyTypes:
   - {fileID: 11400000, guid: 22d6632fb294b99409f2a8948ea50ef9, type: 2}
+  beatTimer: 1
 --- !u!1001 &740074909
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2199,6 +2200,14 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 738d57d7-c76e-412a-a3b2-bbe1c9a5537d
     m_ActionName: Player/Hold[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7f5c6379-a12c-49a7-bb56-8cc68e5f1e76
+    m_ActionName: Player/RotateUp[/Keyboard/w]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6f76e61f-d3e5-42a5-b678-9b44784335d8
+    m_ActionName: Player/RotateDown[/Keyboard/s]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

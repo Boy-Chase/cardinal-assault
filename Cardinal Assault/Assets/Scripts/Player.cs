@@ -73,8 +73,8 @@ public class Player : MonoBehaviour
 
         if (!context.action.triggered) return;
 
-        curDirection--;
-        if ((int)curDirection < 0) curDirection = PlayerDirection.West;
+        curDirection = PlayerDirection.West;
+        // if ((int)curDirection < 0) curDirection = PlayerDirection.West;
         LevelManager.Instance.Step();
     }
 
@@ -92,13 +92,14 @@ public class Player : MonoBehaviour
 
         if (!context.action.triggered) return;
 
-        curDirection++;
-        if ((int)curDirection > 3) curDirection = PlayerDirection.North;
+        curDirection = PlayerDirection.East;
+        // if ((int)curDirection > 3) curDirection = PlayerDirection.North;
         LevelManager.Instance.Step();
     }
 
     public void RotateUp(InputAction.CallbackContext context)
     {
+        Debug.Log("up");
         // add saved time to time score
         if (0.0f < moveTimer)
         {
@@ -111,8 +112,8 @@ public class Player : MonoBehaviour
 
         if (!context.action.triggered) return;
 
-        curDirection--;
-        if ((int)curDirection < 0) curDirection = PlayerDirection.North;
+        curDirection = PlayerDirection.North;
+        // if ((int)curDirection < 0) curDirection = PlayerDirection.North;
         LevelManager.Instance.Step();
     }
 
@@ -130,8 +131,8 @@ public class Player : MonoBehaviour
 
         if (!context.action.triggered) return;
 
-        curDirection--;
-        if ((int)curDirection < 0) curDirection = PlayerDirection.South;
+        curDirection = PlayerDirection.South;
+        // if ((int)curDirection < 0) curDirection = PlayerDirection.South;
         LevelManager.Instance.Step();
     }
 
