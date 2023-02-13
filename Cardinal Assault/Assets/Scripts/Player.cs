@@ -75,7 +75,6 @@ public class Player : MonoBehaviour
 
         curDirection = PlayerDirection.West;
         // if ((int)curDirection < 0) curDirection = PlayerDirection.West;
-        LevelManager.Instance.Step();
     }
 
     public void RotateRight(InputAction.CallbackContext context)
@@ -94,7 +93,6 @@ public class Player : MonoBehaviour
 
         curDirection = PlayerDirection.East;
         // if ((int)curDirection > 3) curDirection = PlayerDirection.North;
-        LevelManager.Instance.Step();
     }
 
     public void RotateUp(InputAction.CallbackContext context)
@@ -114,7 +112,6 @@ public class Player : MonoBehaviour
 
         curDirection = PlayerDirection.North;
         // if ((int)curDirection < 0) curDirection = PlayerDirection.North;
-        LevelManager.Instance.Step();
     }
 
     public void RotateDown(InputAction.CallbackContext context)
@@ -133,14 +130,6 @@ public class Player : MonoBehaviour
 
         curDirection = PlayerDirection.South;
         // if ((int)curDirection < 0) curDirection = PlayerDirection.South;
-        LevelManager.Instance.Step();
-    }
-
-    public void Wait(InputAction.CallbackContext context)
-    {
-        if (!context.action.triggered) return;
-
-        waiting = true;
     }
     #endregion rotation input
 }
