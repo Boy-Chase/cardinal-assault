@@ -102,11 +102,13 @@ public class AntiWaitEnemy : MonoBehaviour
             // if player is blocking correctly
             if ((lane == 0 && player.GetComponent<Player>().curDirection == PlayerDirection.West) || (lane == 1 && player.GetComponent<Player>().curDirection == PlayerDirection.North) || (lane == 2 && player.GetComponent<Player>().curDirection == PlayerDirection.East) || (lane == 3 && player.GetComponent<Player>().curDirection == PlayerDirection.South))
             {
+                Player.Instance.GetComponent<Player>().block.Play();
                 Destroy(gameObject);
             }
             else
             {
                 // subtract health here
+                Player.Instance.GetComponent<Player>().hurt.Play();
             }
         }
     }

@@ -31,6 +31,9 @@ public class Player : MonoBehaviour
     public float scoreTime = 0.0f;
     public GameObject levelEditor;
 
+    public ParticleSystem hurt;
+    public ParticleSystem block;
+
     public int health = 3;
 
     void Start() {  player = this.gameObject.GetComponent<Rigidbody2D>(); levelEditor = GameObject.FindGameObjectWithTag("GameManager");}
@@ -104,7 +107,6 @@ public class Player : MonoBehaviour
     {
         levelEditor.GetComponent<LevelManager>().tutorialDone = true;
 
-        Debug.Log("up");
         // add saved time to time score
         if (0.0f < moveTimer)
         {

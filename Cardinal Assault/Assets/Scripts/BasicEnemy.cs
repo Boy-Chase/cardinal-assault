@@ -103,11 +103,15 @@ public class BasicEnemy : MonoBehaviour
             // if player is blocking correctly
             if ( (lane == 0 && player.GetComponent<Player>().curDirection == PlayerDirection.West) || (lane == 1 && player.GetComponent<Player>().curDirection == PlayerDirection.North) || (lane == 2 && player.GetComponent<Player>().curDirection == PlayerDirection.East) || (lane == 3 && player.GetComponent<Player>().curDirection == PlayerDirection.South))
             {
-                Destroy(gameObject);
+                Player.Instance.GetComponent<Player>().block.Play();
+                // Destroy(gameObject);
             }
             else
             {
+                Player.Instance.GetComponent<Player>().hurt.Play();
                 // subtract health here
+                Debug.Log("h");                
+                Player.Instance.health--;
             }
         }
     }

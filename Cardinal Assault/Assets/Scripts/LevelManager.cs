@@ -91,7 +91,6 @@ public class LevelManager : MonoBehaviour
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < data.Length; j++) {
                 if (j == 0) {
-                    Player.Instance.health--;
                     enemies[i][0] = null;
                 }
                 else if (enemies[i][j-1] == null) {
