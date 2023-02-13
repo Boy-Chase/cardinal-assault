@@ -109,8 +109,7 @@ public class BasicEnemy : MonoBehaviour
             else
             {
                 Player.Instance.GetComponent<Player>().hurt.Play();
-                // subtract health here
-                Debug.Log("h");                
+                // subtract health here                
                 Player.Instance.health--;
             }
         }
