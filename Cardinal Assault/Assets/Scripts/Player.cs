@@ -29,10 +29,11 @@ public class Player : MonoBehaviour
     // time used for each movement + overall time saved with moves
     public float moveTimer = 5.0f;
     public float scoreTime = 0.0f;
+    public GameObject levelEditor;
 
     public int health = 3;
 
-    void Start() {  player = this.gameObject.GetComponent<Rigidbody2D>(); }
+    void Start() {  player = this.gameObject.GetComponent<Rigidbody2D>(); levelEditor = GameObject.FindGameObjectWithTag("GameManager");}
     #endregion initialization
 
     void Update()
@@ -61,6 +62,8 @@ public class Player : MonoBehaviour
     #region rotation input
     public void RotateLeft(InputAction.CallbackContext context)
     {
+        levelEditor.GetComponent<LevelManager>().tutorialDone = true;
+
         // add saved time to time score
         if (0.0f < moveTimer)
         {
@@ -79,6 +82,8 @@ public class Player : MonoBehaviour
 
     public void RotateRight(InputAction.CallbackContext context)
     {
+        levelEditor.GetComponent<LevelManager>().tutorialDone = true;
+
         // add saved time to time score
         if (0.0f < moveTimer)
         {
@@ -97,6 +102,8 @@ public class Player : MonoBehaviour
 
     public void RotateUp(InputAction.CallbackContext context)
     {
+        levelEditor.GetComponent<LevelManager>().tutorialDone = true;
+
         Debug.Log("up");
         // add saved time to time score
         if (0.0f < moveTimer)
@@ -116,6 +123,8 @@ public class Player : MonoBehaviour
 
     public void RotateDown(InputAction.CallbackContext context)
     {
+        levelEditor.GetComponent<LevelManager>().tutorialDone = true;
+
         // add saved time to time score
         if (0.0f < moveTimer)
         {

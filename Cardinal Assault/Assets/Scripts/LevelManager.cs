@@ -36,8 +36,9 @@ public class LevelManager : MonoBehaviour
     public List<Enemy[]> enemies;
     public Enemy[] enemyTypes;
 
-    public float beatSpeed = 1.0f;
+    public float beatSpeed = 0.5f;
     public float beatTimer = 0.0f;
+    public bool tutorialDone = false;
 
     void Start()
     {
@@ -53,7 +54,11 @@ public class LevelManager : MonoBehaviour
 
     private void Update()
     {
-        beatTimer += Time.deltaTime;
+        if (tutorialDone)
+        {
+            beatTimer += Time.deltaTime;
+        }
+
         if (beatSpeed <= beatTimer)
         {
             Step();
