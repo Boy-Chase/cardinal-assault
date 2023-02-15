@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public enum PlayerDirection { North, East, South, West }
 
@@ -30,12 +31,23 @@ public class Player : MonoBehaviour
     public float moveTimer = 5.0f;
     public float scoreTime = 0.0f;
     public GameObject levelEditor;
+    public GameObject pressToStartPanel;
 
     public ParticleSystem hurt;
     public ParticleSystem block;
-
     public int health = 3;
     public int tutorialPress = 0;
+
+    // audio
+
+    // Sound Effect from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=83127">Pixabay</a>
+    public AudioClip blockSound;
+
+    // Sound Effect from <a href="https://pixabay.com/sound-effects/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=95847">Pixabay</a>
+    public AudioClip hitSound;
+
+    // Sound Effect from <a href="https://pixabay.com/sound-effects/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=101008">Pixabay</a>
+    public AudioClip moveSound;
 
     void Start() {  player = this.gameObject.GetComponent<Rigidbody2D>(); levelEditor = GameObject.FindGameObjectWithTag("GameManager");}
     #endregion initialization
@@ -45,6 +57,7 @@ public class Player : MonoBehaviour
         if (9 <= tutorialPress)
         {
             levelEditor.GetComponent<LevelManager>().tutorialDone = true;
+            pressToStartPanel.SetActive(false);
         }
 
         moveTimer -= Time.deltaTime;
@@ -86,7 +99,6 @@ public class Player : MonoBehaviour
         if (!context.action.triggered) return;
 
         curDirection = PlayerDirection.West;
-        // if ((int)curDirection < 0) curDirection = PlayerDirection.West;
     }
 
     public void RotateRight(InputAction.CallbackContext context)
@@ -106,7 +118,6 @@ public class Player : MonoBehaviour
         if (!context.action.triggered) return;
 
         curDirection = PlayerDirection.East;
-        // if ((int)curDirection > 3) curDirection = PlayerDirection.North;
     }
 
     public void RotateUp(InputAction.CallbackContext context)
@@ -126,7 +137,6 @@ public class Player : MonoBehaviour
         if (!context.action.triggered) return;
 
         curDirection = PlayerDirection.North;
-        // if ((int)curDirection < 0) curDirection = PlayerDirection.North;
     }
 
     public void RotateDown(InputAction.CallbackContext context)
@@ -146,7 +156,6 @@ public class Player : MonoBehaviour
         if (!context.action.triggered) return;
 
         curDirection = PlayerDirection.South;
-        // if ((int)curDirection < 0) curDirection = PlayerDirection.South;
     }
     #endregion rotation input
 }
