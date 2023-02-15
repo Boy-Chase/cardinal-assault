@@ -35,12 +35,18 @@ public class Player : MonoBehaviour
     public ParticleSystem block;
 
     public int health = 3;
+    public int tutorialPress = 0;
 
     void Start() {  player = this.gameObject.GetComponent<Rigidbody2D>(); levelEditor = GameObject.FindGameObjectWithTag("GameManager");}
     #endregion initialization
 
     void Update()
     {
+        if (9 <= tutorialPress)
+        {
+            levelEditor.GetComponent<LevelManager>().tutorialDone = true;
+        }
+
         moveTimer -= Time.deltaTime;
 
         waiting = false;
@@ -65,7 +71,7 @@ public class Player : MonoBehaviour
     #region rotation input
     public void RotateLeft(InputAction.CallbackContext context)
     {
-        levelEditor.GetComponent<LevelManager>().tutorialDone = true;
+        tutorialPress++;
 
         // add saved time to time score
         if (0.0f < moveTimer)
@@ -85,7 +91,7 @@ public class Player : MonoBehaviour
 
     public void RotateRight(InputAction.CallbackContext context)
     {
-        levelEditor.GetComponent<LevelManager>().tutorialDone = true;
+        tutorialPress++;
 
         // add saved time to time score
         if (0.0f < moveTimer)
@@ -105,7 +111,7 @@ public class Player : MonoBehaviour
 
     public void RotateUp(InputAction.CallbackContext context)
     {
-        levelEditor.GetComponent<LevelManager>().tutorialDone = true;
+        tutorialPress++;
 
         // add saved time to time score
         if (0.0f < moveTimer)
@@ -125,7 +131,7 @@ public class Player : MonoBehaviour
 
     public void RotateDown(InputAction.CallbackContext context)
     {
-        levelEditor.GetComponent<LevelManager>().tutorialDone = true;
+        tutorialPress++;
 
         // add saved time to time score
         if (0.0f < moveTimer)
