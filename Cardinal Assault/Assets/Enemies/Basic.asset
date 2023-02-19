@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Basic
   sprite: {fileID: 7482667652216324306, guid: e6a2d1b1609a6c542b9d1185da363aef, type: 3}
+  movement: 1

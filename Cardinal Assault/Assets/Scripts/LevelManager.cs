@@ -48,8 +48,8 @@ public class LevelManager : MonoBehaviour
 
         ConvertToObjects();
 
-        EnemyManager.Instance.SetEnemies();
-        EnemyManager.Instance.SetSprites();
+        //EnemyManager.Instance.SetEnemies();
+        //EnemyManager.Instance.SetSprites();
     }
 
     private void Update()
@@ -88,6 +88,7 @@ public class LevelManager : MonoBehaviour
     {
         EnemyManager.Instance.SetEnemies();
         EnemyManager.Instance.SetSprites();
+        EnemyManager.Instance.SetGoalPositions();
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < data.Length; j++) {
                 if (j == 0) {
