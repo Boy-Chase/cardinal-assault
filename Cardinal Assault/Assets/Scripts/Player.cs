@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public enum PlayerDirection { North, East, South, West }
@@ -99,6 +100,12 @@ public class Player : MonoBehaviour
             block.Play();
         }
     }
+    public void Restart(InputAction.CallbackContext context)
+    {
+        if (!context.action.triggered) return;
+        SceneManager.LoadScene("StartScene");
+    }
+
 
     #region rotation input
     public void RotateLeft(InputAction.CallbackContext context)
