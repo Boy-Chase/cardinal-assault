@@ -79,8 +79,6 @@ public class Player : MonoBehaviour
             change = true;
         }
 
-        
-
         lastDirection = curDirection;
     }
 
@@ -94,12 +92,20 @@ public class Player : MonoBehaviour
         if (collision.IsTouching(transform.GetComponent<BoxCollider2D>())) {    
             health--;
             Debug.Log($"Player got hit! Health: {health}");
+            AudioSource.PlayClipAtPoint(hitSound, gameObject.transform.position);
             hurt.Play();
         } else {
-            //Debug.Log($"Player blocked an Enemy");
+            AudioSource.PlayClipAtPoint(blockSound, gameObject.transform.position);
             block.Play();
         }
     }
+
+    // used in level manager
+    public void StepSound()
+    {
+        AudioSource.PlayClipAtPoint(moveSound, gameObject.transform.position);
+    }
+
     public void Restart(InputAction.CallbackContext context)
     {
         if (!context.action.triggered) return;

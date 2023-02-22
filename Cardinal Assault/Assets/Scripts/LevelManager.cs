@@ -86,6 +86,9 @@ public class LevelManager : MonoBehaviour
     
     public void Step()
     {
+        // sound effect
+        Player.Instance.StepSound();
+
         EnemyManager.Instance.SetEnemies();
         EnemyManager.Instance.SetSprites();
         EnemyManager.Instance.SetGoalPositions();
