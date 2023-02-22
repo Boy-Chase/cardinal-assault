@@ -93,8 +93,10 @@ public class Player : MonoBehaviour
         if (collision.IsTouching(transform.GetComponent<BoxCollider2D>())) {    
             health--;
             Debug.Log($"Player got hit! Health: {health}");
+            hurt.Play();
         } else {
             //Debug.Log($"Player blocked an Enemy");
+            block.Play();
         }
     }
 
