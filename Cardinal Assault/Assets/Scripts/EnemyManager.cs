@@ -47,11 +47,6 @@ public class EnemyManager : MonoBehaviour
             for (int i = 0; i < 4; i++) {
                 for (int j = 0; j < 3; j++) {
                     if (goalPositions[i, j] == nullVec) continue;
-                    else if (goalPositions[i, j] == playerPosition)
-                    {
-                        //Debug.Log("player hit!");
-                        transform.GetChild(i).GetChild(j).GetComponent<EnemyDisplay>().enemy = null;
-                    }
                     else transform.GetChild(i).GetChild(j).position = goalPositions[i, j];
                 }
             }
@@ -68,19 +63,6 @@ public class EnemyManager : MonoBehaviour
                 }
             }
         }
-        /* if(duration >= timeToComplete)
-         {
-             for (int i = 0; i < 4; i++) {
-                 for (int j = 0; j < 3; j++)
-                 {
-                     if (goalPositions[i, j] == Vector2.zero) continue;
-                     transform.GetChild(i).GetChild(j).position = new Vector2(
-                         transform.GetChild(i).GetChild(j).position.x + ((lanePositions[i, j].x - goalPositions[i, j].x) / (timeToComplete / Time.deltaTime)),
-                         transform.GetChild(i).GetChild(j).position.y + ((lanePositions[i, j].y - goalPositions[i, j].x) / (timeToComplete / Time.deltaTime)));
-                 }
-             }
-             duration = 0;
-         }*/
     }
 
     public void SetEnemies()
@@ -120,5 +102,11 @@ public class EnemyManager : MonoBehaviour
 
             }
         }
+    }
+
+    public void SetbackSpace(int i, int j)
+    {
+        goalPositions[i, j] = lanePositions[i, j];
+        transform.GetChild(i).GetChild(j).position = goalPositions[i, j];
     }
 }

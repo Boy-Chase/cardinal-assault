@@ -105,7 +105,8 @@ public class LevelManager : MonoBehaviour
     public void RemoveEnemy(GameObject g)
     {
         //Debug.Log($"{g.transform.parent.GetSiblingIndex()}, {int.Parse(g.name) - 1}");
-        enemies[g.transform.parent.GetSiblingIndex()][int.Parse(g.name)-1] = null;
+        //EnemyManager.Instance.SetbackSpace(g.transform.parent.GetSiblingIndex(), int.Parse(g.name) - 1);
+        //enemies[g.transform.parent.GetSiblingIndex()][int.Parse(g.name)-1] = null;
         g.GetComponent<EnemyDisplay>().enemy = null;
         EnemyManager.Instance.SetSprites();
     }
