@@ -78,7 +78,24 @@ public class Player : MonoBehaviour
             change = true;
         }
 
+        
+
         lastDirection = curDirection;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!collision.gameObject.TryGetComponent<EnemyDisplay>(out EnemyDisplay e)) return;
+        if (e.enemy == null) return;
+
+        LevelManager.Instance.RemoveEnemy(collision.gameObject);
+
+        if (collision.IsTouching(transform.GetComponent<BoxCollider2D>())) {    
+            health--;
+            Debug.Log($"Player got hit! Health: {health}");
+        } else {
+            //Debug.Log($"Player blocked an Enemy");
+        }
     }
 
     #region rotation input
