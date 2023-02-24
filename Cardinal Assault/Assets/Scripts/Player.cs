@@ -63,6 +63,8 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (health <= 0) SceneManager.LoadScene("GameOver");
+
         if (9 <= tutorialPress)
         {
             levelEditor.GetComponent<LevelManager>().tutorialDone = true;
