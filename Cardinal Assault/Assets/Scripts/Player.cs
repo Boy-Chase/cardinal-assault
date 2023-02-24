@@ -12,12 +12,13 @@ public class Player : MonoBehaviour
 {
     #region singleton
     public static Player Instance { get; private set; }
+
+    #endregion singleton
     private void Awake()
     {
         if (Instance != null && Instance != this) Destroy(this);
         else Instance = this;
     }
-    #endregion singleton
 
     #region initialization
     public PlayerDirection curDirection = PlayerDirection.North;
@@ -39,6 +40,9 @@ public class Player : MonoBehaviour
     public int health = 3;
     public int tutorialPress = 0;
 
+    public HealthBar healthBar;
+    
+
     // audio
 
     // Sound Effect from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=83127">Pixabay</a>
@@ -50,7 +54,11 @@ public class Player : MonoBehaviour
     // Sound Effect from <a href="https://pixabay.com/sound-effects/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=101008">Pixabay</a>
     public AudioClip moveSound;
 
-    void Start() {  player = this.gameObject.GetComponent<Rigidbody2D>(); levelEditor = GameObject.FindGameObjectWithTag("GameManager");}
+    void Start() {  
+        player = this.gameObject.GetComponent<Rigidbody2D>(); 
+        levelEditor = GameObject.FindGameObjectWithTag("GameManager");
+        healthBar.setMaxHealth(health);
+    }
     #endregion initialization
 
     void Update()
@@ -91,6 +99,7 @@ public class Player : MonoBehaviour
 
         if (collision.IsTouching(transform.GetComponent<BoxCollider2D>())) {    
             health--;
+            healthBar.setHealth(health);
             Debug.Log($"Player got hit! Health: {health}");
             AudioSource.PlayClipAtPoint(hitSound, gameObject.transform.position);
             hurt.Play();
