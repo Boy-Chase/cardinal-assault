@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public enum PlayerDirection { North, East, South, West }
 
@@ -38,9 +39,11 @@ public class Player : MonoBehaviour
     public ParticleSystem hurt;
     public ParticleSystem block;
     public int health = 3;
+    public int streak = 0;
     public int tutorialPress = 0;
 
     public HealthBar healthBar;
+    public TextMeshProUGUI streakNum;
     
 
     // audio
@@ -105,9 +108,15 @@ public class Player : MonoBehaviour
             Debug.Log($"Player got hit! Health: {health}");
             AudioSource.PlayClipAtPoint(hitSound, gameObject.transform.position);
             hurt.Play();
+            streak = 0;
+            streakNum.SetText(streak.ToString());
+            streakNum.color = new Color(1, 1, 1);
         } else {
             AudioSource.PlayClipAtPoint(blockSound, gameObject.transform.position);
             block.Play();
+            streak++;
+            streakNum.SetText(streak.ToString());
+            streakNum.color = new Color(1, 1 - (streak/10), 1 - (streak/10));
         }
     }
 
