@@ -40,11 +40,12 @@ public class Player : MonoBehaviour
     public ParticleSystem block;
     public int health = 3;
     public int streak = 0;
+    public int highestStreak = 0;
     public int tutorialPress = 0;
 
     public HealthBar healthBar;
     public TextMeshProUGUI streakNum;
-    
+    public TextMeshProUGUI gradingGrade;
 
     // audio
 
@@ -93,6 +94,37 @@ public class Player : MonoBehaviour
         }
 
         lastDirection = curDirection;
+
+        if (highestStreak < 6 && streak < 4)
+        {
+            gradingGrade.SetText("F");
+            gradingGrade.color = new Color(1, 1, 1);
+        }
+        else if (highestStreak < 12 && streak < 7)
+        {
+            gradingGrade.SetText("D");
+            gradingGrade.color = new Color(1, 0.8f, 0.8f);
+        }
+        else if (highestStreak < 18 && streak < 10)
+        {
+            gradingGrade.SetText("C");
+            gradingGrade.color = new Color(1, 0.6f, 0.6f);
+        }
+        else if (highestStreak < 24 && streak < 13)
+        {
+            gradingGrade.SetText("B");
+            gradingGrade.color = new Color(1, 0.4f, 0.4f);
+        }
+        else if (highestStreak < 30 && streak < 20)
+        {
+            gradingGrade.SetText("A");
+            gradingGrade.color = new Color(1, 0.2f, 0.2f);
+        }
+        else if (highestStreak < 40)
+        {
+            gradingGrade.SetText("S!");
+            gradingGrade.color = new Color(1, 0, 0);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -115,6 +147,10 @@ public class Player : MonoBehaviour
             AudioSource.PlayClipAtPoint(blockSound, gameObject.transform.position);
             block.Play();
             streak++;
+            if (highestStreak < streak) 
+            {
+                highestStreak = streak;
+            }
             streakNum.SetText(streak.ToString());
             streakNum.color = new Color(1, 1 - (streak/10), 1 - (streak/10));
         }
