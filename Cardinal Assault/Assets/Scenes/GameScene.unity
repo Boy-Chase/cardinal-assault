@@ -858,6 +858,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxDuration: 2
   maxRotation: 5
+  maxZoom: 0.1
 --- !u!1 &523297663
 GameObject:
   m_ObjectHideFlags: 0

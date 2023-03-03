@@ -13,13 +13,12 @@ public class Player : MonoBehaviour
 {
     #region singleton
     public static Player Instance { get; private set; }
-
-    #endregion singleton
     private void Awake()
     {
         if (Instance != null && Instance != this) Destroy(this);
         else Instance = this;
     }
+    #endregion singleton
 
     #region initialization
     public PlayerDirection curDirection = PlayerDirection.North;

@@ -87,6 +87,8 @@ public class LevelManager : MonoBehaviour
         // sound effect
         Player.Instance.StepSound();
 
+        CameraEffects.Instance.BeginZoom();
+
         EnemyManager.Instance.SetEnemies();
         EnemyManager.Instance.SetSprites();
         EnemyManager.Instance.SetGoalPositions();
