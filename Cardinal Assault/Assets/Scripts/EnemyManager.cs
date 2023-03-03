@@ -30,7 +30,6 @@ public class EnemyManager : MonoBehaviour
                 lanePositions[i, j] = transform.GetChild(i).GetChild(j).transform.transform.position;
             }
         }
-
     }
 
     

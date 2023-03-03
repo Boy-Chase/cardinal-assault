@@ -33,7 +33,9 @@ public class CameraEffects : MonoBehaviour
     private float timePassed;
     const float FPS = 60;
     /*--------------------------------*/
-    
+    /*------   Misc Variables   ------*/
+    [SerializeField] private GameObject hurtOverlay;
+    /*--------------------------------*/
     void Start()
     {
         initialCamScale = GetComponent<Camera>().orthographicSize;
@@ -82,7 +84,15 @@ public class CameraEffects : MonoBehaviour
     public void BeginZoom() 
     { 
         zoom = true;
+        hurtOverlay.SetActive(false);
         maxZoomTime = LevelManager.Instance.beatSpeed / 5;
         zoomTimePassed = 0;
+    }
+
+    public void Hurt()
+    {
+        //GetComponent<Camera>().orthographicSize = initialCamScale + 2;
+        hurtOverlay.SetActive(true);
+        //zoom = false;
     }
 }

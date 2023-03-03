@@ -138,6 +138,7 @@ public class Player : MonoBehaviour
             healthBar.setHealth(health);
             Debug.Log($"Player got hit! Health: {health}");
             AudioSource.PlayClipAtPoint(hitSound, gameObject.transform.position);
+            CameraEffects.Instance.Hurt();
             hurt.Play();
             streak = 0;
             streakNum.SetText(streak.ToString());
