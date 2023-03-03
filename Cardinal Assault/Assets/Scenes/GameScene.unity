@@ -1514,7 +1514,7 @@ MonoBehaviour:
   enemyTypes:
   - {fileID: 11400000, guid: 22d6632fb294b99409f2a8948ea50ef9, type: 2}
   beatSpeed: 0.5
-  beatTimer: 1
+  timePassed: 0
   tutorialDone: 0
 --- !u!82 &709509401
 AudioSource:
@@ -4407,7 +4407,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6075346592429378784, guid: 2ea8e8f7fd85eea4daff9bb5b94fbc22, type: 3}
       propertyPath: health
-      value: 50
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6075346592429378784, guid: 2ea8e8f7fd85eea4daff9bb5b94fbc22, type: 3}
       propertyPath: healthBar
