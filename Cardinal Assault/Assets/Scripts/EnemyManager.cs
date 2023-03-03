@@ -24,9 +24,9 @@ public class EnemyManager : MonoBehaviour
     void Start()
     {
         // Record where the tile positions are so we can animate them moving without distrubting positions
-        lanePositions = new Vector2[4,3];
+        lanePositions = new Vector2[4,4];
         for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 3; j++) {
+            for (int j = 0; j < 4; j++) {
                 lanePositions[i, j] = transform.GetChild(i).GetChild(j).transform.transform.position;
             }
         }
@@ -54,7 +54,7 @@ public class EnemyManager : MonoBehaviour
         } else {
             for (int i = 0; i < 4; i++)
             {
-                for (int j = 0; j < 3; j++)
+                for (int j = 0; j < 4; j++)
                 {
                     if (goalPositions[i, j] == nullVec) continue;
                     transform.GetChild(i).GetChild(j).position = new Vector2(
@@ -68,7 +68,7 @@ public class EnemyManager : MonoBehaviour
     public void SetEnemies()
     {
         for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 3; j++) {
+            for (int j = 0; j < 4; j++) {
                 transform.GetChild(i).GetChild(j).GetComponent<EnemyDisplay>().enemy = LevelManager.Instance.enemies[i][j];
             }
         }
@@ -77,7 +77,7 @@ public class EnemyManager : MonoBehaviour
     public void SetSprites()
     {
         for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 3; j++) {
+            for (int j = 0; j < 4; j++) {
                 if (transform.GetChild(i).GetChild(j).GetComponent<EnemyDisplay>().enemy == null) {
                     transform.GetChild(i).GetChild(j).GetComponent<SpriteRenderer>().sprite = null;
                 }
@@ -88,9 +88,9 @@ public class EnemyManager : MonoBehaviour
 
     public void SetGoalPositions()
     {
-        goalPositions = new Vector2[4, 3];
+        goalPositions = new Vector2[4, 4];
         for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 3; j++) {
+            for (int j = 0; j < 4; j++) {
                 if (transform.GetChild(i).GetChild(j).GetComponent<EnemyDisplay>().enemy == null) goalPositions[i, j] = nullVec;
                 else if (j - transform.GetChild(i).GetChild(j).GetComponent<EnemyDisplay>().enemy.movement < 0)
                 {
