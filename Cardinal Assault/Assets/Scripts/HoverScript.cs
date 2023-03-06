@@ -10,13 +10,19 @@ public class HoverScript : MonoBehaviour
     public float scaleMax = 1.1f;
     public float timeIn = 1f;
     public float timeOut = 2f;
+    private RectTransform rectTransform;
+
+    public void Start()
+    {
+        rectTransform = this.gameObject.GetComponent<RectTransform>();
+    }
 
     public void Update()
     {
         float delta = Time.unscaledDeltaTime;
 
         // Hover animation
-        RectTransform rectTransform = this.gameObject.GetComponent<RectTransform>();
+        
         if (isHover && scale < scaleMax)
         {
             scale += timeIn * delta;
@@ -51,6 +57,7 @@ public class HoverScript : MonoBehaviour
     {
         scale = 1f;
         isHover = false;
+        rectTransform.localScale = new Vector3(scale, scale, 1);
     }
 }
 
