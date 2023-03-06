@@ -37,8 +37,8 @@ public class LevelManager : MonoBehaviour
     public Enemy[] enemyTypes;
 
     public float beatSpeed = 0.5f;
-    public float beatTimer = 0.0f;
-    public bool tutorialDone = false;
+    public float timePassed;
+    public bool tutorialDone;
 
     void Start()
     {
@@ -48,21 +48,19 @@ public class LevelManager : MonoBehaviour
 
         ConvertToObjects();
 
-        //EnemyManager.Instance.SetEnemies();
-        //EnemyManager.Instance.SetSprites();
+        EnemyManager.Instance.SetEnemies();
+        EnemyManager.Instance.SetSprites();
     }
 
     private void Update()
     {
-        if (tutorialDone)
-        {
-            beatTimer += Time.deltaTime;
-        }
+        if (!tutorialDone) return;
+        timePassed += Time.deltaTime;
 
-        if (beatSpeed <= beatTimer)
+        if (beatSpeed <= timePassed)
         {
             Step();
-            beatTimer = 0.0f;
+            timePassed = 0;
         }
     }
 
@@ -88,6 +86,8 @@ public class LevelManager : MonoBehaviour
     {
         // sound effect
         Player.Instance.StepSound();
+
+        CameraEffects.Instance.BeginZoom();
 
         EnemyManager.Instance.SetEnemies();
         EnemyManager.Instance.SetSprites();
