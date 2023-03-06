@@ -617,7 +617,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: F
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4496,6 +4496,10 @@ PrefabInstance:
       propertyPath: streakNum
       value: 
       objectReference: {fileID: 588604027}
+    - target: {fileID: 6075346592429378784, guid: 2ea8e8f7fd85eea4daff9bb5b94fbc22, type: 3}
+      propertyPath: testMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 73037e8e864e167418c42864a670a772, type: 3}
     - target: {fileID: 6075346592429378784, guid: 2ea8e8f7fd85eea4daff9bb5b94fbc22, type: 3}
       propertyPath: gradingGrade
       value: 

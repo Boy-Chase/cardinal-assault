@@ -34,6 +34,7 @@ public class Player : MonoBehaviour
     public float scoreTime = 0.0f;
     public GameObject levelEditor;
     public GameObject pressToStartPanel;
+    private bool inTutorial = true;
 
     public ParticleSystem hurt;
     public ParticleSystem block;
@@ -45,6 +46,7 @@ public class Player : MonoBehaviour
     public HealthBar healthBar;
     public TextMeshProUGUI streakNum;
     public TextMeshProUGUI gradingGrade;
+    private bool showGrade = false;
 
     // audio
 
@@ -57,6 +59,8 @@ public class Player : MonoBehaviour
     // Sound Effect from <a href="https://pixabay.com/sound-effects/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=101008">Pixabay</a>
     public AudioClip moveSound;
 
+    public AudioClip testMusic;
+
     void Start() {  
         player = this.gameObject.GetComponent<Rigidbody2D>(); 
         levelEditor = GameObject.FindGameObjectWithTag("GameManager");
@@ -68,10 +72,12 @@ public class Player : MonoBehaviour
     {
         if (health <= 0) SceneManager.LoadScene("GameOver");
 
-        if (9 <= tutorialPress)
+        if (9 <= tutorialPress && inTutorial)
         {
             levelEditor.GetComponent<LevelManager>().tutorialDone = true;
             pressToStartPanel.SetActive(false);
+            inTutorial = false;
+            AudioSource.PlayClipAtPoint(testMusic, new Vector3(0, 0, -10));
         }
 
         moveTimer -= Time.deltaTime;
@@ -94,32 +100,33 @@ public class Player : MonoBehaviour
 
         lastDirection = curDirection;
 
-        if (highestStreak < 6 && streak < 4)
+        if (showGrade && highestStreak < 5 && streak < 3)
         {
             gradingGrade.SetText("F");
             gradingGrade.color = new Color(1, 1, 1);
         }
-        else if (highestStreak < 12 && streak < 7)
+        else if (showGrade && highestStreak < 15 && streak < 10)
         {
             gradingGrade.SetText("D");
             gradingGrade.color = new Color(1, 0.8f, 0.8f);
         }
-        else if (highestStreak < 18 && streak < 10)
+        else if (highestStreak < 20 && streak < 15)
         {
+            showGrade = true;
             gradingGrade.SetText("C");
             gradingGrade.color = new Color(1, 0.6f, 0.6f);
         }
-        else if (highestStreak < 24 && streak < 13)
+        else if (showGrade && highestStreak < 25 && streak < 20)
         {
             gradingGrade.SetText("B");
             gradingGrade.color = new Color(1, 0.4f, 0.4f);
         }
-        else if (highestStreak < 30 && streak < 20)
+        else if (showGrade && highestStreak < 30 && streak < 25)
         {
             gradingGrade.SetText("A");
             gradingGrade.color = new Color(1, 0.2f, 0.2f);
         }
-        else if (highestStreak < 40)
+        else if (showGrade && highestStreak < 40)
         {
             gradingGrade.SetText("S!");
             gradingGrade.color = new Color(1, 0, 0);
