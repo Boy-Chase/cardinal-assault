@@ -995,7 +995,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press to Begin!
+  m_text: Level Select
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3c9fe9c1ff4832a4ab14fad767fc8a0d, type: 2}
   m_sharedMaterial: {fileID: -5089140025738656674, guid: 3c9fe9c1ff4832a4ab14fad767fc8a0d, type: 2}
@@ -1523,7 +1523,7 @@ GameObject:
   - component: {fileID: 1193960046}
   - component: {fileID: 1193960045}
   m_Layer: 5
-  m_Name: StartButton
+  m_Name: LevelSelect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
