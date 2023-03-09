@@ -856,9 +856,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6607401d3607c364eba3311c4007a678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDuration: 2
-  maxRotation: 5
-  maxZoom: 0.1
+  maxDuration: 3
+  maxRotation: 2
+  maxZoom: 0.2
   hurtOverlay: {fileID: 1391761910}
 --- !u!1 &523297663
 GameObject:
@@ -1515,7 +1515,7 @@ MonoBehaviour:
   level: {fileID: 4900000, guid: aca28f18d76bb3446a10c25fe743f884, type: 3}
   enemyTypes:
   - {fileID: 11400000, guid: 22d6632fb294b99409f2a8948ea50ef9, type: 2}
-  beatSpeed: 0.5
+  beatSpeed: 0.4
   timePassed: 0
   tutorialDone: 0
 --- !u!82 &709509401
@@ -4492,6 +4492,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1918189020}
+    - target: {fileID: 6075346592429378784, guid: 2ea8e8f7fd85eea4daff9bb5b94fbc22, type: 3}
+      propertyPath: showGrade
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6075346592429378784, guid: 2ea8e8f7fd85eea4daff9bb5b94fbc22, type: 3}
       propertyPath: streakNum
       value: 
