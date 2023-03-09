@@ -1515,7 +1515,7 @@ MonoBehaviour:
   level: {fileID: 4900000, guid: aca28f18d76bb3446a10c25fe743f884, type: 3}
   enemyTypes:
   - {fileID: 11400000, guid: 22d6632fb294b99409f2a8948ea50ef9, type: 2}
-  beatSpeed: 0.5
+  beatSpeed: 0.4
   timePassed: 0
   tutorialDone: 0
 --- !u!82 &709509401
