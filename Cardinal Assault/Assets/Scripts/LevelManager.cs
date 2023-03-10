@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
@@ -33,6 +34,7 @@ public class LevelManager : MonoBehaviour
     }
 
     [SerializeField] public TextAsset level;
+    [SerializeField] public Image img;
     private LevelData data;
     public List<Enemy[]> enemies;
     public Enemy[] enemyTypes;
@@ -41,6 +43,9 @@ public class LevelManager : MonoBehaviour
     public float timePassed;
     public bool tutorialDone;
 
+    private Color tempColor;
+    private float imgAlpha = .5f;
+
     void Start()
     {
         data = JsonUtility.FromJson<LevelData>(level.text);
@@ -48,6 +53,10 @@ public class LevelManager : MonoBehaviour
         for (int i = 0; i < 4; i++) enemies.Add(new Enemy[data.Length]);
 
         beatSpeed = data.BeatSpeed;
+
+        tempColor = Color.white;
+
+        ResetImageAlpha(false);
 
         ConvertToObjects();
 
@@ -60,13 +69,16 @@ public class LevelManager : MonoBehaviour
         if (!tutorialDone) return;
         timePassed += Time.deltaTime;
 
+        tempColor.a = imgAlpha - (timePassed / beatSpeed);
+        img.color = tempColor;
+
         if (beatSpeed <= timePassed)
         {
             Step();
             timePassed = 0;
+            ResetImageAlpha(true);
         }
     }
-
     public void ConvertToObjects()
     {
         string[] row = data.Rows.North;
@@ -107,6 +119,20 @@ public class LevelManager : MonoBehaviour
             }
         }
     }  
+
+    public void ResetImageAlpha(bool indicator)
+    {
+        if (!indicator)
+        {
+            tempColor.a = 0;
+            img.color = tempColor;
+        }
+        else
+        {
+            tempColor.a = imgAlpha;
+            img.color = tempColor;
+        }
+    }
 
     public void RemoveEnemy(GameObject g)
     {
