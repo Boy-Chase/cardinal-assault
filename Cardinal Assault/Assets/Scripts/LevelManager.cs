@@ -29,6 +29,7 @@ public class LevelManager : MonoBehaviour
     {
         public Rows Rows;
         public int Length;
+        public float BeatSpeed;
     }
 
     [SerializeField] public TextAsset level;
@@ -45,6 +46,8 @@ public class LevelManager : MonoBehaviour
         data = JsonUtility.FromJson<LevelData>(level.text);
         enemies = new List<Enemy[]>();
         for (int i = 0; i < 4; i++) enemies.Add(new Enemy[data.Length]);
+
+        beatSpeed = data.BeatSpeed;
 
         ConvertToObjects();
 
