@@ -54,7 +54,7 @@ public class LevelManager : MonoBehaviour
 
         beatSpeed = data.BeatSpeed;
 
-        tempColor = Color.white;
+        tempColor = img.color;
 
         ResetImageAlpha(false);
 
