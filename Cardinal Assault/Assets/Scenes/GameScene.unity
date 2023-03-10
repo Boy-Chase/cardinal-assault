@@ -856,9 +856,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6607401d3607c364eba3311c4007a678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDuration: 2
-  maxRotation: 1
-  maxZoom: 0.2
+  maxDuration: 0.8
+  maxRotation: 3
+  maxZoom: 0.5
   hurtOverlay: {fileID: 1391761910}
 --- !u!1 &523297663
 GameObject:
