@@ -167,7 +167,7 @@ public class Player : MonoBehaviour
             streakNum.SetText(streak.ToString());
             streakNum.color = new Color(1, 1, 1);
         } else {
-            AudioSource.PlayClipAtPoint(blockSound, gameObject.transform.position);
+            //AudioSource.PlayClipAtPoint(blockSound, gameObject.transform.position);
             block.Play();
             streak++;
             if (highestStreak < streak) 
@@ -182,7 +182,7 @@ public class Player : MonoBehaviour
     // used in level manager
     public void StepSound()
     {
-        AudioSource.PlayClipAtPoint(moveSound, gameObject.transform.position);
+        //AudioSource.PlayClipAtPoint(moveSound, gameObject.transform.position);
     }
 
     public void Restart(InputAction.CallbackContext context)
