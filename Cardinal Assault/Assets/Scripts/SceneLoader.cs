@@ -4,8 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
+    [SerializeField]
+    public int index;
     public void LoadScene()
     {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene(index);
     }
 }
