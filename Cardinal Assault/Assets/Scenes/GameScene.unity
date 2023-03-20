@@ -776,7 +776,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &489874217
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1681,11 +1681,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: {fileID: 4900000, guid: aca28f18d76bb3446a10c25fe743f884, type: 3}
   img: {fileID: 582421840}
+  player: {fileID: 931321791}
   enemyTypes:
   - {fileID: 11400000, guid: 22d6632fb294b99409f2a8948ea50ef9, type: 2}
   beatSpeed: 0.4
   timePassed: 0
   tutorialDone: 0
+  steps: 0
+  enemyCount: 70
+  endPanel: {fileID: 489874216}
+  gradeText: {fileID: 778878739}
 --- !u!82 &709509401
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2322,6 +2327,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &931321791 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6075346592429378780, guid: 2ea8e8f7fd85eea4daff9bb5b94fbc22, type: 3}
+  m_PrefabInstance: {fileID: 6075346594185102593}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1006152079
 GameObject:
   m_ObjectHideFlags: 0

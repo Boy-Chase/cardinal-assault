@@ -40,6 +40,7 @@ public class Player : MonoBehaviour
     public ParticleSystem block;
     public int health = 3;
     public int streak = 0;
+    public string grade;
     public int highestStreak = 0;
     public int tutorialPress = 0;
 
@@ -105,6 +106,7 @@ public class Player : MonoBehaviour
         {
             if (showGrade)
             {
+                grade = "F";
                 gradingGrade.SetText("F");
                 gradingGrade.color = new Color(1, 1, 1);
             }
@@ -113,12 +115,14 @@ public class Player : MonoBehaviour
         {
             if (showGrade)
             {
+                grade = "D";
                 gradingGrade.SetText("D");
                 gradingGrade.color = new Color(1, 0.8f, 0.8f);
             }
         }
         else if (highestStreak < 20 && streak < 15)
         {
+            grade = "C";
             showGrade = true;
             gradingGrade.SetText("C");
             gradingGrade.color = new Color(1, 0.6f, 0.6f);
@@ -127,6 +131,7 @@ public class Player : MonoBehaviour
         {
             if (showGrade)
             {
+                grade = "B";
                 gradingGrade.SetText("B");
                 gradingGrade.color = new Color(1, 0.4f, 0.4f);
             }
@@ -135,6 +140,7 @@ public class Player : MonoBehaviour
         {
             if (showGrade)
             {
+                grade = "A";
                 gradingGrade.SetText("A");
                 gradingGrade.color = new Color(1, 0.2f, 0.2f);
             }
@@ -143,6 +149,7 @@ public class Player : MonoBehaviour
         {
             if (showGrade)
             {
+                grade = "S!";
                 gradingGrade.SetText("S!");
                 gradingGrade.color = new Color(1, 0, 0);
             }

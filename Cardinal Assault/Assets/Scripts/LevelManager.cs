@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -36,12 +37,17 @@ public class LevelManager : MonoBehaviour
     [SerializeField] public TextAsset level;
     [SerializeField] public Image img;
     private LevelData data;
+    public GameObject player;
     public List<Enemy[]> enemies;
     public Enemy[] enemyTypes;
 
     public float beatSpeed = 0.5f;
     public float timePassed;
     public bool tutorialDone;
+    public int steps = 0;
+    public int enemyCount;
+    public GameObject endPanel;
+    public TextMeshProUGUI gradeText;
 
     private Color tempColor;
     private float imgAlpha = .5f;
@@ -117,6 +123,13 @@ public class LevelManager : MonoBehaviour
                     enemies[i][j] = null;
                 }
             }
+        }
+        Debug.Log(enemies.Count + 5);
+        steps++;
+        if (enemyCount + 5 < steps)
+        {
+            endPanel.SetActive(true);
+            gradeText.SetText(player.GetComponent<Player>().grade);
         }
     }  
 
