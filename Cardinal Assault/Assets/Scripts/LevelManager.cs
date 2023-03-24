@@ -32,12 +32,13 @@ public class LevelManager : MonoBehaviour
         public Rows Rows;
         public int Length;
         public float BeatSpeed;
+        public int EnemyCount;
     }
 
     [SerializeField] public TextAsset level;
     [SerializeField] public Image img;
     private LevelData data;
-    public GameObject player;
+    public Player player;
     public List<Enemy[]> enemies;
     public Enemy[] enemyTypes;
 
@@ -45,12 +46,18 @@ public class LevelManager : MonoBehaviour
     public float timePassed;
     public bool tutorialDone;
     public int steps = 0;
-    public int enemyCount;
     public GameObject endPanel;
     public TextMeshProUGUI gradeText;
 
+    private int enemyCount;
+
     private Color tempColor;
     private float imgAlpha = .5f;
+
+    public int getEnemyCount()
+    {
+        return enemyCount;
+    }
 
     void Start()
     {
@@ -59,6 +66,8 @@ public class LevelManager : MonoBehaviour
         for (int i = 0; i < 4; i++) enemies.Add(new Enemy[data.Length]);
 
         beatSpeed = data.BeatSpeed;
+
+        enemyCount = data.EnemyCount;
 
         tempColor = img.color;
 
@@ -125,7 +134,7 @@ public class LevelManager : MonoBehaviour
             }
         }
         steps++;
-        if (enemyCount + 2 < steps)
+        if (data.Length + 5 < steps)
         {
             endPanel.SetActive(true);
             gradeText.SetText(player.GetComponent<Player>().grade);

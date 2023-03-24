@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
     public int highestStreak = 0;
     public int streakGrade;
     public int tutorialPress = 0;
-    public int enemyCount = 0;
+    public int enemyCount;
 
     public HealthBar healthBar;
     public TextMeshProUGUI streakNum;
@@ -72,7 +72,8 @@ public class Player : MonoBehaviour
         showGrade = false;
         isHurt = false;
         streakGrade = 0;
-        enemyCount = levelEditor.GetComponent<LevelManager>().enemyCount;
+        enemyCount = levelEditor.GetComponent<LevelManager>().getEnemyCount();
+        Debug.Log("Player enemy count: " + enemyCount);
     }
     #endregion initialization
 
@@ -128,7 +129,7 @@ public class Player : MonoBehaviour
         {
             streakGrade = 2;
         }
-        else if (streak > (Math.Round(enemyCount * .10)) && streakGrade == 0)
+        else if (streak > (Math.Round(enemyCount * .1)) && streakGrade == 0)
         {
             streakGrade = 1;
         }
