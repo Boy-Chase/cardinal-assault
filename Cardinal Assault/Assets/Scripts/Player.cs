@@ -145,12 +145,10 @@ public class Player : MonoBehaviour
 
         LevelManager.Instance.RemoveEnemy(collision.gameObject);
 
-        /*
-        if (collision.GetComponentInParent<ScriptableObject>().name == "Opposite")
+        if (collision.gameObject.GetComponent<EnemyDisplay>().name == "Opposite")
         {
             if (collision.IsTouching(transform.GetComponent<BoxCollider2D>()))
             {
-                //AudioSource.PlayClipAtPoint(blockSound, gameObject.transform.position);
                 block.Play();
                 streak++;
                 if (highestStreak < streak)
@@ -175,30 +173,34 @@ public class Player : MonoBehaviour
                 streakNum.color = new Color(1, 1, 1);
             }
         }
-        else { }*/
-
-        if (collision.IsTouching(transform.GetComponent<BoxCollider2D>())) {    
-            health--;
-            healthBar.setHealth(health);
-            Debug.Log($"Player got hit! Health: {health}");
-            AudioSource.PlayClipAtPoint(hitSound, gameObject.transform.position);
-            CameraEffects.Instance.Hurt();
-            hurt.Play();
-            if (!isHurt) isHurt = !isHurt;
-            streak = 0;
-            if (streakGrade > 0) streakGrade--;
-            streakNum.SetText(streak.ToString());
-            streakNum.color = new Color(1, 1, 1);
-        } else {
-            //AudioSource.PlayClipAtPoint(blockSound, gameObject.transform.position);
-            block.Play();
-            streak++;
-            if (highestStreak < streak) 
+        else
+        {
+            if (collision.IsTouching(transform.GetComponent<BoxCollider2D>()))
             {
-                highestStreak = streak;
+                health--;
+                healthBar.setHealth(health);
+                Debug.Log($"Player got hit! Health: {health}");
+                AudioSource.PlayClipAtPoint(hitSound, gameObject.transform.position);
+                CameraEffects.Instance.Hurt();
+                hurt.Play();
+                if (!isHurt) isHurt = !isHurt;
+                streak = 0;
+                if (streakGrade > 0) streakGrade--;
+                streakNum.SetText(streak.ToString());
+                streakNum.color = new Color(1, 1, 1);
             }
-            streakNum.SetText(streak.ToString());
-            streakNum.color = new Color(1, 1 - (streak/10), 1 - (streak/10));
+            else
+            {
+                //AudioSource.PlayClipAtPoint(blockSound, gameObject.transform.position);
+                block.Play();
+                streak++;
+                if (highestStreak < streak)
+                {
+                    highestStreak = streak;
+                }
+                streakNum.SetText(streak.ToString());
+                streakNum.color = new Color(1, 1 - (streak / 10), 1 - (streak / 10));
+            }
         }
     }
 
