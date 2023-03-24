@@ -163,7 +163,6 @@ public class Player : MonoBehaviour
             }
             streakNum.SetText(streak.ToString());
             streakNum.color = new Color(1, 1 - (streak/10), 1 - (streak/10));
-            Debug.Log(streakGrade);
         }
     }
 
