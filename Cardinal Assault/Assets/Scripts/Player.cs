@@ -108,24 +108,24 @@ public class Player : MonoBehaviour
             {
                 grade = "F";
                 gradingGrade.SetText("F");
-                gradingGrade.color = new Color(1, 1, 1);
+                gradingGrade.color = new Color(0, 0, 1);
             }
         }
         else if (highestStreak < 15 && streak < 10)
         {
-            if (showGrade)
-            {
-                grade = "D";
-                gradingGrade.SetText("D");
-                gradingGrade.color = new Color(1, 0.8f, 0.8f);
-            }
+            showGrade = true;
+            grade = "D";
+            gradingGrade.SetText("D");
+            gradingGrade.color = new Color(0, 0.5f, 0);
         }
         else if (highestStreak < 20 && streak < 15)
         {
-            grade = "C";
-            showGrade = true;
-            gradingGrade.SetText("C");
-            gradingGrade.color = new Color(1, 0.6f, 0.6f);
+            if (showGrade)
+            {
+                grade = "C";
+                gradingGrade.SetText("C");
+                gradingGrade.color = new Color(1, 1, 0);
+            }
         }
         else if (highestStreak < 25 && streak < 20)
         {
@@ -133,7 +133,7 @@ public class Player : MonoBehaviour
             {
                 grade = "B";
                 gradingGrade.SetText("B");
-                gradingGrade.color = new Color(1, 0.4f, 0.4f);
+                gradingGrade.color = new Color(1, 0.65f, 0);
             }
         }
         else if (showGrade && highestStreak < 30 && streak < 25)
@@ -142,7 +142,7 @@ public class Player : MonoBehaviour
             {
                 grade = "A";
                 gradingGrade.SetText("A");
-                gradingGrade.color = new Color(1, 0.2f, 0.2f);
+                gradingGrade.color = new Color(1, 0, 0);
             }
         }
         else if (showGrade && highestStreak < 40)
@@ -151,7 +151,7 @@ public class Player : MonoBehaviour
             {
                 grade = "S!";
                 gradingGrade.SetText("S!");
-                gradingGrade.color = new Color(1, 0, 0);
+                gradingGrade.color = new Color(1, 0.85f, 0);
             }
         }
     }
