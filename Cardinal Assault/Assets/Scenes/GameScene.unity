@@ -1672,6 +1672,7 @@ MonoBehaviour:
   player: {fileID: 931321792}
   enemyTypes:
   - {fileID: 11400000, guid: 22d6632fb294b99409f2a8948ea50ef9, type: 2}
+  - {fileID: 11400000, guid: 54c706032b63e9e4483d282dd0f3f965, type: 2}
   beatSpeed: 0.4
   timePassed: 0
   tutorialDone: 0
