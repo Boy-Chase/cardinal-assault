@@ -1569,7 +1569,7 @@ GameObject:
   - component: {fileID: 691517599}
   - component: {fileID: 691517598}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Start Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4488,7 +4488,7 @@ GameObject:
   - component: {fileID: 1776390664}
   - component: {fileID: 1776390663}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Grade Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
