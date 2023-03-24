@@ -108,27 +108,27 @@ public class Player : MonoBehaviour
 
         lastDirection = curDirection;
 
-        if (streak > 40 && streakGrade == 5 && !isHurt)
+        if ( streak > (Math.Round(enemyCount * .93))&& streakGrade == 5 && !isHurt)
         {
             streakGrade = 6;
         }
-        else if (streak > 30 && streakGrade == 4)
+        else if (streak > (Math.Round(enemyCount * .85)) && streakGrade == 4)
         {
             streakGrade = 5;
         }
-        else if (streak > 20 && streakGrade == 3)
+        else if (streak > (Math.Round(enemyCount * .70)) && streakGrade == 3)
         {
             streakGrade = 4;
         }
-        else if (streak > 15 && streakGrade == 2)
+        else if (streak > (Math.Round(enemyCount * .50)) && streakGrade == 2)
         {
             streakGrade = 3;
         }
-        else if (streak > 10 && streakGrade == 1)
+        else if (streak > (Math.Round(enemyCount * .30)) && streakGrade == 1)
         {
             streakGrade = 2;
         }
-        else if (streak > 5 && streakGrade == 0)
+        else if (streak > (Math.Round(enemyCount * .10)) && streakGrade == 0)
         {
             streakGrade = 1;
         }
