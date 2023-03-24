@@ -47,6 +47,8 @@ public class Player : MonoBehaviour
     public int tutorialPress = 0;
     public int enemyCount;
 
+    private Color finalGradeColor;
+
     public HealthBar healthBar;
     public TextMeshProUGUI streakNum;
     public TextMeshProUGUI gradingGrade;
@@ -73,7 +75,6 @@ public class Player : MonoBehaviour
         isHurt = false;
         streakGrade = 0;
         enemyCount = levelEditor.GetComponent<LevelManager>().getEnemyCount();
-        Debug.Log("Player enemy count: " + enemyCount);
     }
     #endregion initialization
 
@@ -225,6 +226,7 @@ public class Player : MonoBehaviour
                     grade = "F";
                     gradingGrade.SetText("F");
                     gradingGrade.color = new Color(0, 0, 1);
+                    finalGradeColor = new Color(0, 0, 1);
                 }
                 break;
             case 2:
@@ -232,6 +234,7 @@ public class Player : MonoBehaviour
                 grade = "D";
                 gradingGrade.SetText("D");
                 gradingGrade.color = new Color(0, 0.5f, 0);
+                finalGradeColor = new Color(0, 0.5f, 0);
                 break;
             case 3:
                 if (showGrade)
@@ -239,6 +242,7 @@ public class Player : MonoBehaviour
                     grade = "C";
                     gradingGrade.SetText("C");
                     gradingGrade.color = new Color(1, 1, 0);
+                    finalGradeColor = new Color(1, 1, 0);
                 }
                 break;
             case 4:
@@ -247,6 +251,7 @@ public class Player : MonoBehaviour
                     grade = "B";
                     gradingGrade.SetText("B");
                     gradingGrade.color = new Color(1, 0.65f, 0);
+                    finalGradeColor = new Color(1, 0.65f, 0);
                 }
                 break;
             case 5:
@@ -255,6 +260,7 @@ public class Player : MonoBehaviour
                     grade = "A";
                     gradingGrade.SetText("A");
                     gradingGrade.color = new Color(1, 0, 0);
+                    finalGradeColor = new Color(1, 0, 0);
                 }
                 break;
             case 6:
@@ -263,9 +269,11 @@ public class Player : MonoBehaviour
                     grade = "S!";
                     gradingGrade.SetText("S!");
                     gradingGrade.color = new Color(1, 0.85f, 0);
+                    finalGradeColor = new Color(1, 0.85f, 0);
                 }
                 break;
         }
+        levelEditor.GetComponent<LevelManager>().gradeText.color = finalGradeColor;
     }
 
 
