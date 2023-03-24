@@ -131,7 +131,7 @@ public class Player : MonoBehaviour
         {
             streakGrade = 1;
         }
-        Debug.Log(streakGrade);
+        
         DisplayGrade();
     }
 
