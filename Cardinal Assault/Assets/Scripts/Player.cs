@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
     public GameObject levelEditor;
     public GameObject pressToStartPanel;
     public bool inTutorial = true;
+    public bool isHurt;
 
     public ParticleSystem hurt;
     public ParticleSystem block;
@@ -42,6 +43,7 @@ public class Player : MonoBehaviour
     public int streak = 0;
     public string grade;
     public int highestStreak = 0;
+    public int streakGrade;
     public int tutorialPress = 0;
 
     public HealthBar healthBar;
@@ -67,6 +69,8 @@ public class Player : MonoBehaviour
         levelEditor = GameObject.FindGameObjectWithTag("GameManager");
         healthBar.setMaxHealth(health);
         showGrade = false;
+        isHurt = false;
+        streakGrade = 0;
     }
     #endregion initialization
 
@@ -102,58 +106,33 @@ public class Player : MonoBehaviour
 
         lastDirection = curDirection;
 
-        if (highestStreak < 5 && streak < 3)
+        // 
+        if (streak > 40 && streakGrade == 5 && !isHurt)
         {
-            if (showGrade)
-            {
-                grade = "F";
-                gradingGrade.SetText("F");
-                gradingGrade.color = new Color(0, 0, 1);
-            }
+            streakGrade = 6;
         }
-        else if (highestStreak < 15 && streak < 10)
+        else if (streak > 30 && streakGrade == 4)
         {
-            showGrade = true;
-            grade = "D";
-            gradingGrade.SetText("D");
-            gradingGrade.color = new Color(0, 0.5f, 0);
+            streakGrade = 5;
         }
-        else if (highestStreak < 20 && streak < 15)
+        else if (streak > 20 && streakGrade == 3)
         {
-            if (showGrade)
-            {
-                grade = "C";
-                gradingGrade.SetText("C");
-                gradingGrade.color = new Color(1, 1, 0);
-            }
+            streakGrade = 4;
         }
-        else if (highestStreak < 25 && streak < 20)
+        else if (streak > 15 && streakGrade == 2)
         {
-            if (showGrade)
-            {
-                grade = "B";
-                gradingGrade.SetText("B");
-                gradingGrade.color = new Color(1, 0.65f, 0);
-            }
+            streakGrade = 3;
         }
-        else if (showGrade && highestStreak < 30 && streak < 25)
+        else if (streak > 10 && streakGrade == 1)
         {
-            if (showGrade)
-            {
-                grade = "A";
-                gradingGrade.SetText("A");
-                gradingGrade.color = new Color(1, 0, 0);
-            }
+            streakGrade = 2;
         }
-        else if (showGrade && highestStreak < 40)
+        else if (streak > 5 && streakGrade == 0)
         {
-            if (showGrade)
-            {
-                grade = "S!";
-                gradingGrade.SetText("S!");
-                gradingGrade.color = new Color(1, 0.85f, 0);
-            }
+            streakGrade = 1;
         }
+        Debug.Log(streakGrade);
+        DisplayGrade();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -170,7 +149,9 @@ public class Player : MonoBehaviour
             AudioSource.PlayClipAtPoint(hitSound, gameObject.transform.position);
             CameraEffects.Instance.Hurt();
             hurt.Play();
+            if (!isHurt) isHurt = !isHurt;
             streak = 0;
+            streakGrade--;
             streakNum.SetText(streak.ToString());
             streakNum.color = new Color(1, 1, 1);
         } else {
@@ -196,6 +177,61 @@ public class Player : MonoBehaviour
     {
         if (!context.action.triggered) return;
         SceneManager.LoadScene("StartScene");
+    }
+
+    public void DisplayGrade()
+    {
+        switch (streakGrade)
+        {
+            case 0:
+                break;
+            case 1:
+                if (showGrade)
+                {
+                    grade = "F";
+                    gradingGrade.SetText("F");
+                    gradingGrade.color = new Color(0, 0, 1);
+                }
+                break;
+            case 2:
+                showGrade = true;
+                grade = "D";
+                gradingGrade.SetText("D");
+                gradingGrade.color = new Color(0, 0.5f, 0);
+                break;
+            case 3:
+                if (showGrade)
+                {
+                    grade = "C";
+                    gradingGrade.SetText("C");
+                    gradingGrade.color = new Color(1, 1, 0);
+                }
+                break;
+            case 4:
+                if (showGrade)
+                {
+                    grade = "B";
+                    gradingGrade.SetText("B");
+                    gradingGrade.color = new Color(1, 0.65f, 0);
+                }
+                break;
+            case 5:
+                if (showGrade)
+                {
+                    grade = "A";
+                    gradingGrade.SetText("A");
+                    gradingGrade.color = new Color(1, 0, 0);
+                }
+                break;
+            case 6:
+                if (showGrade)
+                {
+                    grade = "S!";
+                    gradingGrade.SetText("S!");
+                    gradingGrade.color = new Color(1, 0.85f, 0);
+                }
+                break;
+        }
     }
 
 
