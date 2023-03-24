@@ -124,9 +124,8 @@ public class LevelManager : MonoBehaviour
                 }
             }
         }
-        Debug.Log(enemies.Count + 5);
         steps++;
-        if (enemyCount + 5 < steps)
+        if (enemyCount + 2 < steps)
         {
             endPanel.SetActive(true);
             gradeText.SetText(player.GetComponent<Player>().grade);

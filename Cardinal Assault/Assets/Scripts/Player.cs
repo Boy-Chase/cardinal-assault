@@ -45,6 +45,7 @@ public class Player : MonoBehaviour
     public int highestStreak = 0;
     public int streakGrade;
     public int tutorialPress = 0;
+    public int enemyCount = 0;
 
     public HealthBar healthBar;
     public TextMeshProUGUI streakNum;
@@ -71,6 +72,7 @@ public class Player : MonoBehaviour
         showGrade = false;
         isHurt = false;
         streakGrade = 0;
+        enemyCount = levelEditor.GetComponent<LevelManager>().enemyCount;
     }
     #endregion initialization
 
