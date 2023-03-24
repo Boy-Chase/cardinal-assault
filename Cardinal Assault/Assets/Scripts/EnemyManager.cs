@@ -39,7 +39,6 @@ public class EnemyManager : MonoBehaviour
 
         duration += Time.deltaTime;
         timeToComplete = 0.1f;
-        float stepTime = 0.5f;
 
         if (duration >= timeToComplete)
         {
