@@ -106,7 +106,6 @@ public class Player : MonoBehaviour
 
         lastDirection = curDirection;
 
-        // 
         if (streak > 40 && streakGrade == 5 && !isHurt)
         {
             streakGrade = 6;
@@ -151,7 +150,7 @@ public class Player : MonoBehaviour
             hurt.Play();
             if (!isHurt) isHurt = !isHurt;
             streak = 0;
-            streakGrade--;
+            if (streakGrade > 0) streakGrade--;
             streakNum.SetText(streak.ToString());
             streakNum.color = new Color(1, 1, 1);
         } else {
@@ -164,6 +163,7 @@ public class Player : MonoBehaviour
             }
             streakNum.SetText(streak.ToString());
             streakNum.color = new Color(1, 1 - (streak/10), 1 - (streak/10));
+            Debug.Log(streakGrade);
         }
     }
 
