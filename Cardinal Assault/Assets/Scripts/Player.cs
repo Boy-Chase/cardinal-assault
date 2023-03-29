@@ -143,9 +143,9 @@ public class Player : MonoBehaviour
         if (!collision.gameObject.TryGetComponent<EnemyDisplay>(out EnemyDisplay e)) return;
         if (e.enemy == null) return;
 
-        LevelManager.Instance.RemoveEnemy(collision.gameObject);
+        Debug.Log(collision.gameObject.GetComponent<EnemyDisplay>().enemy.name);
 
-        if (collision.gameObject.GetComponent<EnemyDisplay>().name == "Opposite")
+        if (collision.gameObject.GetComponent<EnemyDisplay>().enemy.name == "Opposite")
         {
             if (collision.IsTouching(transform.GetComponent<BoxCollider2D>()))
             {
@@ -202,6 +202,8 @@ public class Player : MonoBehaviour
                 streakNum.color = new Color(1, 1 - (streak / 10), 1 - (streak / 10));
             }
         }
+
+        LevelManager.Instance.RemoveEnemy(collision.gameObject);
     }
 
     // used in level manager
