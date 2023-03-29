@@ -39,6 +39,8 @@ public class Player : MonoBehaviour
 
     public ParticleSystem hurt;
     public ParticleSystem block;
+    public ParticleSystem hurtR;
+    public ParticleSystem blockR;
     public int health = 3;
     public int streak = 0;
     public string grade;
@@ -144,12 +146,13 @@ public class Player : MonoBehaviour
         if (e.enemy == null) return;
 
         Debug.Log(collision.gameObject.GetComponent<EnemyDisplay>().enemy.name);
+        Debug.Log(collision.gameObject.GetComponent<EnemyDisplay>().enemy);
 
         if (collision.gameObject.GetComponent<EnemyDisplay>().enemy.name == "Opposite")
         {
             if (collision.IsTouching(transform.GetComponent<BoxCollider2D>()))
             {
-                block.Play();
+                blockR.Play();
                 streak++;
                 if (highestStreak < streak)
                 {
@@ -165,7 +168,7 @@ public class Player : MonoBehaviour
                 Debug.Log($"Player got hit! Health: {health}");
                 AudioSource.PlayClipAtPoint(hitSound, gameObject.transform.position);
                 CameraEffects.Instance.Hurt();
-                hurt.Play();
+                hurtR.Play();
                 if (!isHurt) isHurt = !isHurt;
                 streak = 0;
                 if (streakGrade > 0) streakGrade--;

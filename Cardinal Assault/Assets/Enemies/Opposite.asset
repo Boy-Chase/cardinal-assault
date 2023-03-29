@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Opposite
   m_EditorClassIdentifier: 
   name: Opposite
-  sprite: {fileID: 7482667652216324306, guid: e6a2d1b1609a6c542b9d1185da363aef, type: 3}
+  sprite: {fileID: -2413806693520163455, guid: 7246df7d6b647af4da89b8e9ae6b6765, type: 3}
   movement: 1
