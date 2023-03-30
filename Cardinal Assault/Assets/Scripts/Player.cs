@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
     public GameObject pressToStartPanel;
     public bool inTutorial = true;
     public bool isHurt;
-
+    [SerializeField] private GameObject bulletPrefab;
     public ParticleSystem hurt;
     public ParticleSystem block;
     public ParticleSystem hurtR;
@@ -284,7 +284,7 @@ public class Player : MonoBehaviour
     }
 
 
-    #region rotation input
+    #region player input
     public void RotateLeft(InputAction.CallbackContext context)
     {
         tutorialPress++;
@@ -360,5 +360,12 @@ public class Player : MonoBehaviour
 
         curDirection = PlayerDirection.South;
     }
-    #endregion rotation input
+
+    public void Shoot(InputAction.CallbackContext context)
+    {
+        if (!context.started) return;
+        Instantiate(bulletPrefab,transform.position,transform.rotation);
+    }
+
+    #endregion player input
 }
