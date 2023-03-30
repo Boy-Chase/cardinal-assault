@@ -1664,10 +1664,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 54c706032b63e9e4483d282dd0f3f965, type: 2}
   beatSpeed: 0.4
   timePassed: 0
+  tutorialTimer: 0
   tutorialDone: 0
   steps: 0
   endPanel: {fileID: 489874216}
   gradeText: {fileID: 778878739}
+  tutorialScreen: {fileID: 1633770221}
+  countDownText: {fileID: 799505394}
 --- !u!82 &709509401
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1995,7 +1998,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -250, y: 185}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5000001, y: 0.5}
 --- !u!114 &799505394
@@ -2018,7 +2021,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press W/A/S/D 3 Times to Start
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2045,8 +2048,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -15297,6 +15300,10 @@ PrefabInstance:
       propertyPath: gradingGrade
       value: 
       objectReference: {fileID: 472697480}
+    - target: {fileID: 6075346592429378784, guid: 2ea8e8f7fd85eea4daff9bb5b94fbc22, type: 3}
+      propertyPath: tutorialScreen
+      value: 
+      objectReference: {fileID: 1633770221}
     - target: {fileID: 6075346592429378784, guid: 2ea8e8f7fd85eea4daff9bb5b94fbc22, type: 3}
       propertyPath: pressToStartPanel
       value: 

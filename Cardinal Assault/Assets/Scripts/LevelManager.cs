@@ -6,7 +6,6 @@ using System.IO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class LevelManager : MonoBehaviour
 {
     #region singleton
@@ -44,6 +43,7 @@ public class LevelManager : MonoBehaviour
 
     public float beatSpeed = 0.5f;
     public float timePassed;
+    public float tutorialTimer;
     public bool tutorialDone;
     public int steps = 0;
     public GameObject endPanel;
@@ -53,6 +53,9 @@ public class LevelManager : MonoBehaviour
 
     private Color tempColor;
     private float imgAlpha = .5f;
+
+    public Image tutorialScreen;
+    public TextMeshProUGUI countDownText;
 
     public int getEnemyCount()
     {
@@ -75,13 +78,45 @@ public class LevelManager : MonoBehaviour
 
         ConvertToObjects();
 
+        tutorialTimer = 0;
+
+        tutorialDone = false;
+
         EnemyManager.Instance.SetEnemies();
         EnemyManager.Instance.SetSprites();
     }
 
     private void Update()
     {
-        if (!tutorialDone) return;
+        if (tutorialScreen.isActiveAndEnabled) return;
+        if (tutorialTimer > 4)
+        {
+            tutorialDone = true;
+            tutorialTimer = 0;
+            timePassed = 0;
+            player.inTutorial = false;
+        }
+        if (!tutorialDone && !tutorialScreen.isActiveAndEnabled)
+        {
+            timePassed += Time.deltaTime;
+            if (beatSpeed <= timePassed)
+            {
+                tutorialTimer++;
+                if (tutorialTimer == 4)
+                {
+                    countDownText.SetText("Go!");
+                }
+                else
+                {
+                    countDownText.SetText((4 - tutorialTimer).ToString());
+                }
+                
+                timePassed = 0;
+            }
+            return;
+        }
+        
+        
         timePassed += Time.deltaTime;
 
         tempColor.a = imgAlpha - (timePassed / beatSpeed);
