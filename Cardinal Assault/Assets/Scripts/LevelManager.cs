@@ -160,6 +160,7 @@ public class LevelManager : MonoBehaviour
         //Debug.Log($"{g.transform.parent.GetSiblingIndex()}, {int.Parse(g.name) - 1}");
         //EnemyManager.Instance.SetbackSpace(g.transform.parent.GetSiblingIndex(), int.Parse(g.name) - 1);
         //enemies[g.transform.parent.GetSiblingIndex()][int.Parse(g.name)-1] = null;
+        //enemies[(int)g.GetComponent<EnemyDisplay>().dataPosition.x -1][(int)g.GetComponent<EnemyDisplay>().dataPosition.y -1] = null;
         g.GetComponent<EnemyDisplay>().enemy = null;
         EnemyManager.Instance.SetSprites();
     }

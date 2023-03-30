@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 325919370}
   - component: {fileID: 325919372}
   m_Layer: 0
-  m_Name: 1
+  m_Name: 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -227,6 +227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
+  dataPosition: {x: 0, y: 0}
 --- !u!61 &325919372
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -398,7 +399,7 @@ GameObject:
   m_Component:
   - component: {fileID: 375266599}
   m_Layer: 0
-  m_Name: South
+  m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -436,7 +437,7 @@ GameObject:
   - component: {fileID: 434077316}
   - component: {fileID: 434077315}
   m_Layer: 0
-  m_Name: 4
+  m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -548,6 +549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
+  dataPosition: {x: 0, y: 0}
 --- !u!1 &472697478
 GameObject:
   m_ObjectHideFlags: 0
@@ -941,7 +943,7 @@ GameObject:
   - component: {fileID: 523297665}
   - component: {fileID: 523297667}
   m_Layer: 0
-  m_Name: 3
+  m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1027,6 +1029,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
+  dataPosition: {x: 0, y: 0}
 --- !u!61 &523297667
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1353,7 +1356,7 @@ GameObject:
   - component: {fileID: 613782993}
   - component: {fileID: 613782995}
   m_Layer: 0
-  m_Name: 2
+  m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1439,6 +1442,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
+  dataPosition: {x: 0, y: 0}
 --- !u!61 &613782995
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2108,7 +2112,7 @@ GameObject:
   - component: {fileID: 805622463}
   - component: {fileID: 805622465}
   m_Layer: 0
-  m_Name: 2
+  m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2194,6 +2198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
+  dataPosition: {x: 0, y: 0}
 --- !u!61 &805622465
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2640,7 +2645,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1018955547}
   m_Layer: 0
-  m_Name: East
+  m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2678,7 +2683,7 @@ GameObject:
   - component: {fileID: 1030706767}
   - component: {fileID: 1030706769}
   m_Layer: 0
-  m_Name: 1
+  m_Name: 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2764,6 +2769,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
+  dataPosition: {x: 0, y: 0}
 --- !u!61 &1030706769
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2864,7 +2870,7 @@ GameObject:
   - component: {fileID: 1099975454}
   - component: {fileID: 1099975456}
   m_Layer: 0
-  m_Name: 3
+  m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2950,6 +2956,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
+  dataPosition: {x: 0, y: 0}
 --- !u!61 &1099975456
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2989,7 +2996,7 @@ GameObject:
   - component: {fileID: 1118271532}
   - component: {fileID: 1118271534}
   m_Layer: 0
-  m_Name: 3
+  m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3075,6 +3082,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
+  dataPosition: {x: 0, y: 0}
 --- !u!61 &1118271534
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3085,7 +3093,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -3164,7 +3172,7 @@ GameObject:
   - component: {fileID: 1292002557}
   - component: {fileID: 1292002556}
   m_Layer: 0
-  m_Name: 4
+  m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3195,7 +3203,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -3276,6 +3284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
+  dataPosition: {x: 0, y: 0}
 --- !u!1 &1347648182
 GameObject:
   m_ObjectHideFlags: 0
@@ -8853,7 +8862,7 @@ GameObject:
   - component: {fileID: 1555792688}
   - component: {fileID: 1555792690}
   m_Layer: 0
-  m_Name: 2
+  m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8939,6 +8948,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
+  dataPosition: {x: 0, y: 0}
 --- !u!61 &1555792690
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8975,7 +8985,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1572394434}
   m_Layer: 0
-  m_Name: West
+  m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9013,7 +9023,7 @@ GameObject:
   - component: {fileID: 1576976053}
   - component: {fileID: 1576976055}
   m_Layer: 0
-  m_Name: 3
+  m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9099,6 +9109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
+  dataPosition: {x: 0, y: 0}
 --- !u!61 &1576976055
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9216,7 +9227,7 @@ GameObject:
   - component: {fileID: 1644536708}
   - component: {fileID: 1644536710}
   m_Layer: 0
-  m_Name: 2
+  m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9302,6 +9313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
+  dataPosition: {x: 0, y: 0}
 --- !u!61 &1644536710
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9346,7 +9358,7 @@ GameObject:
   - component: {fileID: 1703256443}
   - component: {fileID: 1703256442}
   m_Layer: 0
-  m_Name: 4
+  m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9458,6 +9470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
+  dataPosition: {x: 0, y: 0}
 --- !u!1 &1709653520
 GameObject:
   m_ObjectHideFlags: 0
@@ -9471,7 +9484,7 @@ GameObject:
   - component: {fileID: 1709653522}
   - component: {fileID: 1709653524}
   m_Layer: 0
-  m_Name: 1
+  m_Name: 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9557,6 +9570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
+  dataPosition: {x: 0, y: 0}
 --- !u!61 &1709653524
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9596,7 +9610,7 @@ GameObject:
   - component: {fileID: 1740914059}
   - component: {fileID: 1740914058}
   m_Layer: 0
-  m_Name: 4
+  m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9708,6 +9722,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
+  dataPosition: {x: 0, y: 0}
 --- !u!1 &1776390661
 GameObject:
   m_ObjectHideFlags: 0
@@ -15051,7 +15066,7 @@ GameObject:
   - component: {fileID: 2041913338}
   - component: {fileID: 2041913340}
   m_Layer: 0
-  m_Name: 1
+  m_Name: 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15137,6 +15152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
+  dataPosition: {x: 0, y: 0}
 --- !u!61 &2041913340
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15173,7 +15189,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2120549346}
   m_Layer: 0
-  m_Name: North
+  m_Name: 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

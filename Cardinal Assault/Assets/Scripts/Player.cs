@@ -145,10 +145,6 @@ public class Player : MonoBehaviour
         if (!collision.gameObject.TryGetComponent<EnemyDisplay>(out EnemyDisplay e)) return;
         if (e.enemy == null) return;
 
-        Debug.Log(collision.gameObject.GetComponent<EnemyDisplay>().enemy.name);
-        Debug.Log(collision.gameObject.GetComponent<EnemyDisplay>().enemy);
-
-
         bool touchingPlayer = collision.IsTouching(transform.GetComponent<BoxCollider2D>());
         bool reverse = collision.gameObject.GetComponent<EnemyDisplay>().enemy.name == "Opposite";
 
