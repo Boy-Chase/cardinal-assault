@@ -15286,6 +15286,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 709509398}
     - target: {fileID: 6075346592429378784, guid: 2ea8e8f7fd85eea4daff9bb5b94fbc22, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 6499948653452064607, guid: 31060e21617e2884189ba6ffb256b251, type: 3}
+    - target: {fileID: 6075346592429378784, guid: 2ea8e8f7fd85eea4daff9bb5b94fbc22, type: 3}
       propertyPath: gradingGrade
       value: 
       objectReference: {fileID: 472697480}
@@ -15296,6 +15300,46 @@ PrefabInstance:
     - target: {fileID: 6075346592429378785, guid: 2ea8e8f7fd85eea4daff9bb5b94fbc22, type: 3}
       propertyPath: m_UIInputModule
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6075346592429378785, guid: 2ea8e8f7fd85eea4daff9bb5b94fbc22, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6075346592429378785, guid: 2ea8e8f7fd85eea4daff9bb5b94fbc22, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_ActionId
+      value: a048fd5d-697e-409a-a609-04015a8c4bda
+      objectReference: {fileID: 0}
+    - target: {fileID: 6075346592429378785, guid: 2ea8e8f7fd85eea4daff9bb5b94fbc22, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_ActionName
+      value: Player/Shoot[/Keyboard/space]
+      objectReference: {fileID: 0}
+    - target: {fileID: 6075346592429378785, guid: 2ea8e8f7fd85eea4daff9bb5b94fbc22, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6075346592429378785, guid: 2ea8e8f7fd85eea4daff9bb5b94fbc22, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6075346592429378785, guid: 2ea8e8f7fd85eea4daff9bb5b94fbc22, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 931321792}
+    - target: {fileID: 6075346592429378785, guid: 2ea8e8f7fd85eea4daff9bb5b94fbc22, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6075346592429378785, guid: 2ea8e8f7fd85eea4daff9bb5b94fbc22, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Shoot
+      objectReference: {fileID: 0}
+    - target: {fileID: 6075346592429378785, guid: 2ea8e8f7fd85eea4daff9bb5b94fbc22, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Player, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6075346592429378785, guid: 2ea8e8f7fd85eea4daff9bb5b94fbc22, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ea8e8f7fd85eea4daff9bb5b94fbc22, type: 3}
