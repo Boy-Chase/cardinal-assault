@@ -49,7 +49,6 @@ public class Player : MonoBehaviour
     public string grade;
     public int highestStreak = 0;
     public int streakGrade;
-    public int tutorialPress = 0;
     public int enemyCount;
 
     private Color finalGradeColor;
@@ -58,6 +57,7 @@ public class Player : MonoBehaviour
     public TextMeshProUGUI streakNum;
     public TextMeshProUGUI gradingGrade;
     public bool showGrade = false;
+    public Image tutorialScreen;
 
     // audio
 
@@ -87,7 +87,7 @@ public class Player : MonoBehaviour
     {
         if (health <= 0) SceneManager.LoadScene("GameOver");
 
-        if (9 <= tutorialPress && inTutorial)
+        if (!inTutorial)
         {
             levelEditor.GetComponent<LevelManager>().tutorialDone = true;
             pressToStartPanel.SetActive(false);
@@ -255,7 +255,6 @@ public class Player : MonoBehaviour
     #region player input
     public void RotateLeft(InputAction.CallbackContext context)
     {
-        tutorialPress++;
 
         // add saved time to time score
         if (0.0f < moveTimer)
@@ -274,8 +273,6 @@ public class Player : MonoBehaviour
 
     public void RotateRight(InputAction.CallbackContext context)
     {
-        tutorialPress++;
-
         // add saved time to time score
         if (0.0f < moveTimer)
         {
@@ -293,7 +290,6 @@ public class Player : MonoBehaviour
 
     public void RotateUp(InputAction.CallbackContext context)
     {
-        tutorialPress++;
 
         // add saved time to time score
         if (0.0f < moveTimer)
@@ -312,7 +308,6 @@ public class Player : MonoBehaviour
 
     public void RotateDown(InputAction.CallbackContext context)
     {
-        tutorialPress++;
 
         // add saved time to time score
         if (0.0f < moveTimer)
