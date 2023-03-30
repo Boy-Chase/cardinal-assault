@@ -227,7 +227,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
-  dataPosition: {x: 0, y: 0}
 --- !u!61 &325919372
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -549,7 +548,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
-  dataPosition: {x: 0, y: 0}
 --- !u!1 &472697478
 GameObject:
   m_ObjectHideFlags: 0
@@ -1029,7 +1027,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
-  dataPosition: {x: 0, y: 0}
 --- !u!61 &523297667
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1442,7 +1439,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
-  dataPosition: {x: 0, y: 0}
 --- !u!61 &613782995
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2198,7 +2194,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
-  dataPosition: {x: 0, y: 0}
 --- !u!61 &805622465
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2769,7 +2764,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
-  dataPosition: {x: 0, y: 0}
 --- !u!61 &1030706769
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2956,7 +2950,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
-  dataPosition: {x: 0, y: 0}
 --- !u!61 &1099975456
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3082,7 +3075,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
-  dataPosition: {x: 0, y: 0}
 --- !u!61 &1118271534
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3284,7 +3276,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
-  dataPosition: {x: 0, y: 0}
 --- !u!1 &1347648182
 GameObject:
   m_ObjectHideFlags: 0
@@ -8948,7 +8939,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
-  dataPosition: {x: 0, y: 0}
 --- !u!61 &1555792690
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9109,7 +9099,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
-  dataPosition: {x: 0, y: 0}
 --- !u!61 &1576976055
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9313,7 +9302,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
-  dataPosition: {x: 0, y: 0}
 --- !u!61 &1644536710
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9470,7 +9458,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
-  dataPosition: {x: 0, y: 0}
 --- !u!1 &1709653520
 GameObject:
   m_ObjectHideFlags: 0
@@ -9570,7 +9557,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
-  dataPosition: {x: 0, y: 0}
 --- !u!61 &1709653524
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9722,7 +9708,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
-  dataPosition: {x: 0, y: 0}
 --- !u!1 &1776390661
 GameObject:
   m_ObjectHideFlags: 0
@@ -15152,7 +15137,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
-  dataPosition: {x: 0, y: 0}
 --- !u!61 &2041913340
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15301,6 +15285,10 @@ PrefabInstance:
       propertyPath: levelEditor
       value: 
       objectReference: {fileID: 709509398}
+    - target: {fileID: 6075346592429378784, guid: 2ea8e8f7fd85eea4daff9bb5b94fbc22, type: 3}
+      propertyPath: bulletCharge
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6075346592429378784, guid: 2ea8e8f7fd85eea4daff9bb5b94fbc22, type: 3}
       propertyPath: bulletPrefab
       value: 
