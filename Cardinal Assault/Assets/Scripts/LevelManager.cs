@@ -114,8 +114,8 @@ public class LevelManager : MonoBehaviour
     
     public void Step()
     {
-        // sound effect
         Player.Instance.StepSound();
+        Player.Instance.bulletCharge += 1;
 
         CameraEffects.Instance.BeginZoom();
 

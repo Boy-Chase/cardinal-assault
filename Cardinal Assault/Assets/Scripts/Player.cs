@@ -36,7 +36,10 @@ public class Player : MonoBehaviour
     public GameObject pressToStartPanel;
     public bool inTutorial = true;
     public bool isHurt;
+
     [SerializeField] private GameObject bulletPrefab;
+    public int bulletCharge;
+
     public ParticleSystem hurt;
     public ParticleSystem block;
     public ParticleSystem hurtR;
@@ -328,7 +331,8 @@ public class Player : MonoBehaviour
 
     public void Shoot(InputAction.CallbackContext context)
     {
-        if (!context.started) return;
+        if (!context.started || bulletCharge < 10) return;
+        bulletCharge = 0;
         Instantiate(bulletPrefab,transform.position,transform.rotation);
     }
 
