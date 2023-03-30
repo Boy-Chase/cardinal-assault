@@ -16,6 +16,8 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         rb.velocity = transform.up * speed;
+
+        if(Mathf.Abs(transform.position.x) > 12 || Mathf.Abs(transform.position.y) > 12) Destroy(this.gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
