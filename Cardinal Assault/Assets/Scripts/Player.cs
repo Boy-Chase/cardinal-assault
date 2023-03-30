@@ -91,7 +91,7 @@ public class Player : MonoBehaviour
         {
             levelEditor.GetComponent<LevelManager>().tutorialDone = true;
             pressToStartPanel.SetActive(false);
-            inTutorial = false;
+            inTutorial = true;
             AudioSource.PlayClipAtPoint(testMusic, new Vector3(0, 0, -10));
         }
 
