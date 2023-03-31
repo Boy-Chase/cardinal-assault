@@ -1,11 +1,11 @@
 {
   "Rows": {
-    "North":["", "Basic", "", "", "", "", "Basic", "", "Basic", "", "", "", "", "", "Basic", "", "Basic", "", "", "", "Basic", "Basic", "", "Basic", "", "", "", "Basic", "", "", "", "Basic", "", "", "", "", "Basic", "", "", "", "Basic", "", "Basic", "", "", "", "", "Basic", "" , "", "", "", "Basic" , "", "Basic", "", "" , "", "", "Basic", "" , "", "", "", "" , "Basic", "", "", "Basic" , "", "", "Basic"],
-    "East":["", "", "", "", "Basic", "", "", "Basic", "", "", "", "", "Basic", "", "", "", "", "Basic", "", "", "", "", "", "", "", "", "Basic", "", "", "Basic", "", "", "Basic", "", "", "", "", "", "Basic", "", "", "", "", "", "", "Basic", "", "" , "", "Basic", "", "Basic" , "", "", "", "" , "", "Basic", "", "" , "", "", "", "Basic" , "", "", "", "" , "", "Basic", "", ""],
-    "South":["", "", "Basic", "", "", "", "", "", "", "Basic", "Basic", "", "", "", "", "Basic", "", "", "Basic", "", "", "", "", "", "", "Basic", "", "", "", "", "", "", "", "Basic", "", "Basic", "", "", "", "", "", "Basic", "", "Basic", "", "", "Basic", "" , "", "", "", "" , "", "Basic", "", "Basic", "", "", "Basic", "" , "", "Basic", "", "" , "Basic", "", "Basic", "" , "", "", "Basic", ""],
-    "West":["", "", "", "Basic", "", "Basic", "", "", "", "", "", "", "", "Basic", "", "", "", "", "", "Basic", "", "", "", "", "Basic", "", "", "", "Basic", "", "Basic", "", "", "", "", "", "", "Basic", "", "Basic", "", "", "", "", "Basic", "", "", "" , "", "", "Basic", "" , "", "", "", "" , "Basic", "", "", "" , "", "", "Basic", "" , "", "", "", "Basic" , "", "", "", ""]
+    "North":["", "Basic", "Opposite", "", "", "", "Basic", "", "Basic", "", "", "", "", "", "Basic", "", "Basic", "", "", "", "Basic", "Basic", "Opposite", "Basic", "", "", "", "Basic", "", "", "", "Basic", "", "", "", "", "Basic", "", "", "", "Basic", "", "Basic", "", "", "", "", "Basic", "Opposite" , "", "", "", "Basic" , "", "Basic", "", "" , "", "", "Basic", "" , "", "", "", "" , "Basic", "", "", "Basic" , "", "", ""],
+    "East":["", "", "", "", "Basic", "", "", "Basic", "Opposite", "", "", "", "Basic", "", "", "", "", "Basic", "", "", "", "", "", "", "", "", "Basic", "", "", "Basic", "", "", "Basic", "", "", "", "", "", "Basic", "", "", "", "", "", "", "Basic", "", "" , "", "Basic", "", "Basic" , "", "", "", "" , "", "Basic", "Opposite", "" , "", "", "", "Basic" , "", "", "", "" , "", "Basic", "", ""],
+    "South":["", "", "", "", "", "", "", "", "", "Basic", "Basic", "Opposite", "", "", "", "Basic", "", "", "Basic", "", "", "", "", "", "", "Basic", "", "", "", "", "", "", "", "Basic", "Opposite", "Basic", "", "", "", "", "", "Basic", "", "Basic", "", "", "Basic", "" , "", "", "", "" , "", "Basic", "", "Basic", "", "", "Basic", "" , "", "Basic", "", "" , "Basic", "", "Basic", "" , "", "", "Basic", "Opposite"],
+    "West":["", "", "", "Basic", "", "Basic", "", "", "", "", "", "", "", "Basic", "", "", "", "", "", "Basic", "", "", "", "", "Basic", "", "", "", "Basic", "", "Basic", "", "", "", "", "", "", "Basic", "", "Basic", "Opposite", "", "", "", "Basic", "", "", "" , "", "", "Basic", "" , "", "", "", "" , "Basic", "", "", "" , "", "", "Basic", "" , "", "", "", "Basic" , "", "", "", ""]
   },
-  "Length": 71,
+  "Length": 72,
   "BeatSpeed": 0.4,
-  "EnemyCount": 65
+  "EnemyCount": 73
 }

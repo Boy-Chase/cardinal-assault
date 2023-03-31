@@ -8760,11 +8760,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Use WASD to rotate your shield
+  m_text: 'Blocking round enemies will damage you
 
 
-    Face it towards enemies to block
-    them
+    Face away from them to avoid
+    damage
 
 '
   m_isRightToLeft: 0
